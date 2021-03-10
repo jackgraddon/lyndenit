@@ -1,2 +1,2 @@
-# lyndenit
-A support website for Lynden Tech Support.
+# Lynden IT Support
+A support website for Lynden IT Support.
