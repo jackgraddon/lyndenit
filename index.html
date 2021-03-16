@@ -10,6 +10,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/e80db28d62.js" crossorigin="anonymous"></script>
     <!-- Personal CSS -->
     <link rel="stylesheet" href="./css/style.css">
     <!-- Favicon -->
@@ -19,13 +21,13 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <nav class="navbar navbar-expand-sm">
         <a class="navbar-brand" href="./">
-            <img src="./images/lynden/lyndenIcon.svg" alt="Lynden School District logo without text" height="70px">
+            <div class="navbar-brand-img"></div>
         </a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
             aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <i class="fa fa-bars" aria-hidden="true"></i>
         </button>
         <!-- Navigation Links -->
         <div class="collapse navbar-collapse" id="collapsibleNavId">
@@ -38,32 +40,35 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        aria-haspopup="true" aria-expanded="false">FAQ</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
-                        <a class="dropdown-item" href="#">Action 1</a>
-                        <a class="dropdown-item" href="#">Action 2</a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-wifi" aria-hidden="true"></i> No WiFi</a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-volume-mute" aria-hidden="true"></i> No
+                            Audio</a>
                     </div>
                 </li>
             </ul>
             <!-- Search Bar -->
-            <script type="text/javascript">
-                function active() {
-                    var search = document.getElementById('search');
-                    search.placeholder = "...using 25 characters!"
-                }
-                function inactive() {
-                    var search = document.getElementById('search');
-                    search.placeholder = "Find your issue..."
-                }
-            </script>
-            <form class="gcse-searchresults-only form-inline my-2 my-lg-0 " action="q=">
-                <input id='search' class="form-control mr-sm-2" type="text" maxlength="25" onMouseDown='active();'
-                    onBlur='inactive();' placeholder="Find your issue...">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-
-            </form>
+            <div class="search">
+                <div class="gcse-searchbox-only"></div>
+            </div>
         </div>
     </nav>
+    <main class="container">
+        <div class="jumbotron mt-5" style="height: 340px;">
+            <span style="margin-top: auto; margin-bottom: auto; height: 200px;">
+                <img src="./images/lynden/svg/lyndenIcon.svg" class="float-right" height="200px"
+                    style="padding: 0 !important;">
+
+                <h1>Lynden Tech Support</h1>
+                <p class="lead">Jumbo helper text</p>
+                <a class="btn btn-primary" href="Jumbo action link" role="button">Jumbo action name</a>
+            </span>
+        </div>
+    </main>
+
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
