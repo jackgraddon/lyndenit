@@ -11,27 +11,30 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Personal CSS -->
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/style.css">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/ico" href="images/lynden/lyndenFavicon.ico" />
+    <!-- Google Site Search -->
+    <script async src="https://cse.google.com/cse.js?cx=f35faae7eae0e71ee"></script>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <a class="navbar-brand" href="./">
-            <img src="./images/lynden/lyndenIcon.png" alt="Lynden School District logo without text" height="70px">
+            <img src="./images/lynden/lyndenIcon.svg" alt="Lynden School District logo without text" height="70px">
         </a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
             aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <!-- Navigation Links -->
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
                     <a class="nav-link" href="./">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="#">Support</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
@@ -42,9 +45,22 @@
                     </div>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <!-- Search Bar -->
+            <script type="text/javascript">
+                function active() {
+                    var search = document.getElementById('search');
+                    search.placeholder = "...using 25 characters!"
+                }
+                function inactive() {
+                    var search = document.getElementById('search');
+                    search.placeholder = "Find your issue..."
+                }
+            </script>
+            <form class="gcse-searchresults-only form-inline my-2 my-lg-0 " action="q=">
+                <input id='search' class="form-control mr-sm-2" type="text" maxlength="25" onMouseDown='active();'
+                    onBlur='inactive();' placeholder="Find your issue...">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
             </form>
         </div>
     </nav>

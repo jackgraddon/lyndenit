@@ -1,0 +1,142 @@
+/* CSS for the Lynden High School IT Website */
+:root {
+  --light: rgba(255, 255, 255);
+  --dark: #3b3b3b;
+  --primary: #56cf55;
+  --secondary: #ffca09;
+}
+
+/* Body */
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #dddddd;
+    color: black !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #2e2e2e;
+    color: white !important;
+  }
+}
+
+/* Navbar */
+@media (prefers-color-scheme: light) {
+  nav {
+    background-color: #ffffff;
+  }
+  nav li.active a {
+    color: rgb(0, 0, 0) !important;
+  }
+  nav a {
+    color: rgba(0, 0, 0, 0.5) !important;
+    transition: 100ms ease;
+  }
+  nav a:hover {
+    color: rgba(0, 0, 0, 0.7) !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  nav {
+    background-color: var(--dark);
+  }
+  nav li.active a {
+    color: rgb(255, 255, 255) !important;
+  }
+  nav a {
+    color: rgba(255, 255, 255, 0.5) !important;
+    transition: 100ms ease;
+  }
+  nav a:hover {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+}
+.navbar-brand:hover {
+  transform: scale(1.15);
+}
+
+/* Searchbar */
+div.search {
+  display: block;
+  background-color: rgba(255, 255, 255, 0);
+  width: 300px;
+}
+
+/* Jumbotron */
+@media (prefers-color-scheme: light) {
+  .jumbotron {
+    background-color: white !important;
+    border-radius: 15px;
+
+    box-shadow: 10px 10px 99px -20px rgba(128, 128, 128, 0.7);
+    -webkit-box-shadow: 10px 10px 99px -20px rgba(128, 128, 128, 0.7);
+    -moz-box-shadow: 10px 10px 99px -20px rgba(128, 128, 128, 0.7);
+  }
+  .jumbotron h1 {
+    font-family: "Playfair Italic", serif;
+    font-weight: 800;
+    font-style: italic;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .jumbotron {
+    background-color: var(--dark) !important;
+    border-radius: 15px;
+
+    box-shadow: 10px 10px 99px -20px rgba(15, 15, 15, 0.7);
+    -webkit-box-shadow: 10px 10px 99px -20px rgba(15, 15, 15, 0.7);
+    -moz-box-shadow: 10px 10px 99px -20px rgba(15, 15, 15, 0.7);
+  }
+  .jumbotron h1 {
+    font-family: "Righteous", cursive;
+  }
+}
+
+/* Card */
+@media (prefers-color-scheme: light) {
+  .card {
+    background-color: white !important;
+
+    box-shadow: 10px 10px 99px -20px rgba(128, 128, 128, 0.7);
+    -webkit-box-shadow: 10px 10px 99px -20px rgba(128, 128, 128, 0.7);
+    -moz-box-shadow: 10px 10px 99px -20px rgba(128, 128, 128, 0.7);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .card {
+    background-color: var(--dark) !important;
+
+    box-shadow: 10px 10px 99px -20px rgba(15, 15, 15, 0.7);
+    -webkit-box-shadow: 10px 10px 99px -20px rgba(15, 15, 15, 0.7);
+    -moz-box-shadow: 10px 10px 99px -20px rgba(15, 15, 15, 0.7);
+  }
+}
+
+/* List Group */
+@media (prefers-color-scheme: light) {
+  .list-group {
+    background-color: white !important;
+    padding: 20px;
+    border-radius: 15px;
+
+    box-shadow: 10px 10px 99px -20px rgba(128, 128, 128, 0.7);
+    -webkit-box-shadow: 10px 10px 99px -20px rgba(128, 128, 128, 0.7);
+    -moz-box-shadow: 10px 10px 99px -20px rgba(128, 128, 128, 0.7);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .list-group {
+    background-color: var(--dark) !important;
+    padding: 20px;
+    border-radius: 15px;
+
+    box-shadow: 10px 10px 99px -20px rgba(15, 15, 15, 0.7);
+    -webkit-box-shadow: 10px 10px 99px -20px rgba(15, 15, 15, 0.7);
+    -moz-box-shadow: 10px 10px 99px -20px rgba(15, 15, 15, 0.7);
+  }
+}
