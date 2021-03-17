@@ -226,10 +226,10 @@ a.navbar-brand .navbar-brand-img {
 
 /* Links */
 a {
-  color: var(--primary) !important;
+  color: var(--primary);
 }
 a:hover {
-  color: var(--primary-hover) !important;
+  color: var(--primary-hover);
 }
 
 /* Badges */
