@@ -104,7 +104,7 @@
 }
 
 .dropdown-menu {
-  /* box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.5); */
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.1);
   border-radius: 5px !important;
 }
 
@@ -189,6 +189,10 @@ a.navbar-brand .navbar-brand-img {
   }
 }
 
+.card {
+  border-radius: 15px;
+}
+
 /* List Group */
 @media (prefers-color-scheme: light) {
   .list-group {
@@ -249,4 +253,10 @@ a:hover {
 }
 .fullsidebar div.sidebar {
   flex: 1;
+}
+
+/* List Items */
+.faq-step {
+  overflow: hidden;
+  transition: 150ms ease-in-out;
 }

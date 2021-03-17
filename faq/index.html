@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Lynden IT | FAQ</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/e80db28d62.js" crossorigin="anonymous"></script>
+    <!-- Personal CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/ico" href="../images/lynden/lyndenFavicon.ico" />
+    <!-- Google Site Search -->
+    <script async src="https://cse.google.com/cse.js?cx=f35faae7eae0e71ee"></script>
+</head>
+
+<body>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-sm">
+        <a class="navbar-brand" href="../">
+            <div class="navbar-brand-img"></div>
+        </a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+        <!-- Navigation Links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="../">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Support</a>
+                </li>
+                <li class="nav-item active dropdown">
+                    <a class="nav-link dropdown-toggle" href="../faq/" id="dropdownId" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">FAQ <span class="sr-only">(current)</span></a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="#"><i class="fa fa-wifi" aria-hidden="true"></i> No WiFi</a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-volume-mute" aria-hidden="true"></i> No
+                            Audio</a>
+                    </div>
+                </li>
+            </ul>
+            <!-- Search Bar -->
+            <div class="search">
+                <div class="gcse-searchbox-only"></div>
+            </div>
+            <!-- Detect Safari -->
+            <p class="safari-warning-search hidden">
+                <i class="fa fa-safari" aria-hidden="true"></i> Search doesn't work on Safari
+            </p>
+            <script type="application/javascript">
+                var ua = navigator.userAgent.toLowerCase();
+                if (ua.indexOf('safari') != -1) {
+                    if (ua.indexOf('chrome') > -1) {
+                        console.log('Using a Chromium Base - Good to go!')
+                    } else {
+                        console.log('Using Safari');
+                        var warning = document.getElementById('safari-warning-search');
+                        $(".safari-warning-search").removeClass("hidden");
+                    }
+                }
+            </script>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="container">
+        <div class="jumbotron mt-5">
+            <span class="d-flex flex-column">
+                <span class="d-flex align-items-center">
+                    <span class=" w-100">
+                        <h1>Frequently Asked Questions</h1>
+                        <p class="lead">See if your problem is common, and find ways to quickly solve it!</p>
+                    </span>
+                    <img src="../images/lynden/svg/lyndenIcon.svg" class="float-right" height="200px">
+                </span>
+            </span>
+        </div>
+
+        <!-- FAQ -->
+        <script type="application/javascript">
+            let previousStep;
+
+            function toggleStep(stepID, toggle) {
+                let step = document.getElementById(stepID);
+                if (toggle == true) {
+                    if (previousStep == step) {
+                        $(step).height('0').then(console.log(`Height set to 0 for ${step.id}.`));
+                        previousStep = step;
+                    } else {
+                        $(step).height('auto').then(console.log(`Height set to auto for ${step.id}`));
+                        previousStep = step;
+                    }
+                } else {
+                    $(step).height('0').then(console.log(`Height set to 0 for ${step.id}.`));
+                    previousStep = step;
+                }
+
+
+
+
+
+
+                if (previousStep, step) {
+                }
+            }
+        </script>
+        <div class="card-deck">
+            <div class="card">
+                <!-- <img class="card-img-top" src="" alt=""> -->
+                <div class="card-body">
+                    <h4 class="card-title"><i class="fa fa-wifi" aria-hidden="true"></i> No Wifi</h4>
+                    <p class="card-text">
+                    <ol class="list-group">
+
+                        <li class="list-group-item" onclick="toggleStep('wifi-step-one', true)">Check to see if you
+                            are on your account.
+                            <ol class="faq-step" id="wifi-step-one" onclick="toggleStep('wifi-step-one', false)"
+                                style="height: 0px;">
+                                <li>Click on the <i class="fa fa-windows" aria-hidden="true"></i> Windows Start menu.
+                                </li>
+                                <li>Click on the <i class="fa fa-user-circle-o" aria-hidden="true"></i> account icon.
+                                </li>
+                                <li>Check - does it say LaptopLoan? If so, log out and log in with your account.</li>
+                            </ol>
+                        </li>
+                        <li class="list-group-item" onclick="openStep('wifi-step-two')">Check your interent connection.
+                            <ol class="faq-step" id="wifi-step-two" onclick="closeStep('wifi-step-two')"
+                                style="height: 0px;">
+                                <li>Click on the <i class="fa fa-windows" aria-hidden="true"></i> Windows Start menu.
+                                </li>
+                                <li>Click on the <i class="fa fa-user-circle-o" aria-hidden="true"></i> account icon.
+                                </li>
+                                <li>Check - does it say LaptopLoan? If so, log out and log in with your account.</li>
+                            </ol>
+                        </li>
+                        <li class="list-group-item">Disabled item</li>
+                    </ol>
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <!-- <img class="card-img-top" src="holder.js/100x180/" alt=""> -->
+                <div class="card-body">
+                    <h4 class="card-title"><i class="fa fa-volume-mute" aria-hidden="true"></i> No Audio</h4>
+                    <p class="card-text">
+                    <ul class="list-group">
+                        <li class="list-group-item">Active item</li>
+                        <li class="list-group-item">Item</li>
+                        <li class="list-group-item">Disabled item</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
