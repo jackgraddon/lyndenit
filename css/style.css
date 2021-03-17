@@ -5,6 +5,7 @@
   --dark: #3b3b3b;
   --dark-hover: #474747;
   --primary: #56cf55;
+  --primary-hover: #78e478;
   --secondary: #ffca09;
 }
 
@@ -36,6 +37,9 @@
   .dropdown-menu {
     background-color: var(--light) !important;
     border-radius: var(--light) !important;
+  }
+  .dropdown-menu {
+    border-color: var(--light) !important;
   }
   nav li.active a {
     color: rgb(0, 0, 0) !important;
@@ -69,6 +73,9 @@
   .dropdown-menu {
     background-color: var(--dark) !important;
     border-color: var(--dark) !important;
+  }
+  .dropdown-menu {
+    border-color: var(--dark-hover) !important;
   }
   nav li.active a {
     color: rgb(255, 255, 255) !important;
@@ -210,4 +217,35 @@ a.navbar-brand .navbar-brand-img {
 .btn-primary {
   background-color: var(--primary) !important;
   border-color: var(--primary) !important;
+}
+.btn-secondary {
+  background-color: var(--secondary) !important;
+  border-color: var(--secondary) !important;
+}
+
+/* Links */
+a {
+  color: var(--primary) !important;
+}
+a:hover {
+  color: var(--primary-hover) !important;
+}
+
+/* Badges */
+.badge-primary {
+  background-color: var(--primary) !important;
+}
+.badge-secondary {
+  background-color: var(--secondary) !important;
+}
+
+/* Containers */
+.fullsidebar {
+  display: flex;
+}
+.fullsidebar div.body {
+  flex: 3;
+}
+.fullsidebar div.sidebar {
+  flex: 1;
 }
