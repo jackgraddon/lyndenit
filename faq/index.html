@@ -99,32 +99,11 @@
 
         <!-- FAQ -->
         <script type="application/javascript">
-            let previousStep;
-
-            function toggleStep(stepID, toggle) {
-                let step = document.getElementById(stepID);
-                if (toggle == true) {
-                    if (previousStep == step) {
-                        $(step).height('0').then(console.log(`Height set to 0 for ${step.id}.`));
-                        previousStep = step;
-                    } else {
-                        $(step).height('auto').then(console.log(`Height set to auto for ${step.id}`));
-                        previousStep = step;
-                    }
-                } else {
-                    $(step).height('0').then(console.log(`Height set to 0 for ${step.id}.`));
-                    previousStep = step;
-                }
-
-
-
-
-
-
-                if (previousStep, step) {
-                }
+            function toggleStep(id) {
+                document.getElementById(id).toggleAttribute('hidden');
             }
         </script>
+        <p>To get more detailed directions, click on the step you are confused on or need more help with.</p>
         <div class="card-deck">
             <div class="card">
                 <!-- <img class="card-img-top" src="" alt=""> -->
@@ -132,35 +111,59 @@
                     <h4 class="card-title"><i class="fa fa-wifi" aria-hidden="true"></i> No Wifi</h4>
                     <p class="card-text">
                     <ol class="list-group">
-
-                        <li class="list-group-item" onclick="toggleStep('wifi-step-one', true)">Check to see if you
+                        <li class="list-group-item clickable" onclick="toggleStep('wifi-step-one')">Check to see if you
                             are on your account.
-                            <ol class="faq-step" id="wifi-step-one" onclick="toggleStep('wifi-step-one', false)"
-                                style="height: 0px;">
-                                <li>Click on the <i class="fa fa-windows" aria-hidden="true"></i> Windows Start menu.
+                            <ol class="faq-step text-muted" id="wifi-step-one" hidden>
+                                <li>Click on the <i class="fa fa-windows" aria-hidden="true"></i> <b>Windows Start</b>
+                                    menu.
                                 </li>
-                                <li>Click on the <i class="fa fa-user-circle-o" aria-hidden="true"></i> account icon.
+                                <li>Click on the <i class="fa fa-user-circle" aria-hidden="true"></i> <b>account</b>
+                                    icon.
                                 </li>
-                                <li>Check - does it say LaptopLoan? If so, log out and log in with your account.</li>
+                                <li>Check - does it say <b>LaptopLoan</b>? If so, log out and log in with your account.
+                                </li>
+                                <p class="text-muted text-sm" style="z-index: 3;">Why is LaptopLoan an issue?
+                                    <a href="#laptoploan">Click here to find out.</a>
+                                </p>
                             </ol>
                         </li>
-                        <li class="list-group-item" onclick="openStep('wifi-step-two')">Check your interent connection.
-                            <ol class="faq-step" id="wifi-step-two" onclick="closeStep('wifi-step-two')"
-                                style="height: 0px;">
-                                <li>Click on the <i class="fa fa-windows" aria-hidden="true"></i> Windows Start menu.
+                        <li class="list-group-item clickable" onclick="toggleStep('wifi-step-two')">Check your interent
+                            connection.
+                            <ol class="faq-step text-muted" id="wifi-step-two" hidden>
+                                <li>Press the <i class="fa fa-windows" aria-hidden="true"></i> key and I
+                                    at the same time.
                                 </li>
-                                <li>Click on the <i class="fa fa-user-circle-o" aria-hidden="true"></i> account icon.
+                                <li>Search for <b>Wifi</b> in the search bar and click the top result.
                                 </li>
-                                <li>Check - does it say LaptopLoan? If so, log out and log in with your account.</li>
+                                <li>Have a connection? If not, press <b>'Show Available Network'</b> and connect to
+                                    <b>LHS-District</b>.
+                                </li>
+                                <li>Network say <b>'Connected, No Internet'</b>? Try toggling the wifi setting off and
+                                    back on again. If this doesn't work after a try or two, it may be your laptop.
+                                </li>
                             </ol>
                         </li>
-                        <li class="list-group-item">Disabled item</li>
+                        <li class="list-group-item clickable" onclick="toggleStep('wifi-step-three')">Restart your
+                            laptop.
+                            <ol class="faq-step text-muted" id="wifi-step-three" hidden>
+                                <li>Save all of your work. Restarting will delete any unsaved documents or projects.
+                                </li>
+                                <li><b>Do not</b> press and hold the physical power button - this is not good for the
+                                    computer.
+                                    Instead, press the <i class="fa fa-windows" aria-hidden="true"></i> <b>Windows
+                                        Start</b> menu and press the power buton, and click restart.</li>
+                                <li>It will restart on its own, so wait until it is done. Log in to <a
+                                        title="Don't know how to log in?" href="#loggingin">your account</a> and try to
+                                    connect to wifi again.
+                                </li>
+                            </ol>
+                        </li>
                     </ol>
-                    </p>
+                    <p>Still not working?</p>
                 </div>
             </div>
             <div class="card">
-                <!-- <img class="card-img-top" src="holder.js/100x180/" alt=""> -->
+                <!-- <img class="card-img-top" src="" alt=""> -->
                 <div class="card-body">
                     <h4 class="card-title"><i class="fa fa-volume-mute" aria-hidden="true"></i> No Audio</h4>
                     <p class="card-text">
@@ -173,7 +176,83 @@
                 </div>
             </div>
         </div>
+        <div class="card mt-5" id="laptoploan">
+            <!-- <img class="card-img-top" src="holder.js/100x180/" alt=""> -->
+            <div class="card-body">
+                <h4 class="card-title"><i class="fa fa-user-circle" aria-hidden="true"></i> LaptopLoan</h4>
+                <p class="card-text">Why is logging in with LaptopLoan an issue?
+                <div class="list-group">
+                    <p>LaptopLoan was an account made in early 2020 when the school was handing out laptops for kids to
+                        use at home. As of (date of deactivation), LaptopLoan was disabled, and its access to many of
+                        the necesary things you need to do your schoolwork was revoked. If you are unable to do certain
+                        things, like connect to wifi, it is possible you are logged in with LaptopLoan.</p>
+                </div>
+                </p>
+            </div>
+        </div>
+        <script>
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>
+        <div class="card mt-5" id="loggingin">
+            <!-- <img class="card-img-top" src="holder.js/100x180/" alt=""> -->
+            <div class="card-body">
+                <h4 class="card-title"><i class="fa fa-user-circle" aria-hidden="true"></i> Logging In</h4>
+                <p class="card-text">Can't log in / remember your login information?
+                <div class="list-group">
+                    <p>School login accounts for students are formatted like this:</p>
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <p class="p-2 m-2 text-bubble" data-toggle="tooltip" data-placement="bottom"
+                                title="The last two digits of the year.">
+                                Graduation Year</p>
+                            <p class="p-2 m-2 text-bubble" data-toggle="tooltip" data-placement="bottom"
+                                title="All lowercase.">Last
+                                Name</p>
+                            <p class="p-2 m-2 text-bubble" data-toggle="tooltip" data-placement="bottom"
+                                title="Lowercase letter.">First
+                                Initial</p>
+                        </div>
+                        <div>
+                            <p class="text-muted text-sm">Example of constructed username: 22whitem</p>
+                        </div>
+                    </div>
+                    <p class="mt-1">Your password is formatted as follows:</p>
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <p class="p-2 m-2 text-bubble" data-toggle="tooltip" data-placement="bottom"
+                                title="Capital L.">
+                                L</p>
+                            <p class="p-2 m-2 text-bubble" data-toggle="tooltip" data-placement="bottom"
+                                title="Example: 0612345.">
+                                Student ID</p>
+                            <p class="p-2 m-2 text-bubble" data-toggle="tooltip" data-placement="bottom"
+                                title="Exclamation point.">!
+                            </p>
+                        </div>
+                        <div>
+                            <p class="text-muted text-sm">Example of constructed password: L0612345!</p>
+                        </div>
+                    </div>
+                </div>
+                </p>
+            </div>
+        </div>
     </main>
+
+    <nav class="nav justify-content-center align-items-center p-3 mt-5 flex-column">
+        <p class="nav-link p-1 m-1 text-muted">Website &copy;Lynden High School <span id="dateYear"></span>. All
+            Rights Reserved.
+        </p>
+        <p class="nav-link p-1 m-1 text-muted">Developed by Jack Graddon</p>
+        <!-- <p class="nav-link p-1 m-1 text-black-50">Add something.</p> -->
+    </nav>
+    <script type="text/javascript">
+        var date = new Date();
+        var year = date.getFullYear();
+        document.getElementById('dateYear').innerText = year;
+    </script>
 </body>
 
 </html>

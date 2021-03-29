@@ -105,6 +105,19 @@
             </h1>
         </div>
     </main>
+
+    <nav class="nav justify-content-center align-items-center p-3 mt-5 flex-column">
+        <p class="nav-link p-1 m-1 text-muted">Website &copy;Lynden High School <span id="dateYear"></span>. All
+            Rights Reserved.
+        </p>
+        <p class="nav-link p-1 m-1 text-muted">Developed by Jack Graddon</p>
+        <!-- <p class="nav-link p-1 m-1 text-black-50">Add something.</p> -->
+    </nav>
+    <script type="text/javascript">
+        var date = new Date();
+        var year = date.getFullYear();
+        document.getElementById('dateYear').innerText = year;
+    </script>
 </body>
 
 </html>
