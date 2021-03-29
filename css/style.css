@@ -17,6 +17,7 @@
 
 html {
   scroll-behavior: smooth;
+  user-select: none;
 }
 
 /* Body */
@@ -68,12 +69,16 @@ html {
 .text-bubble {
   background-color: rgba(199, 199, 199, 0.5);
   border-radius: 10px;
-  width: 150px;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.tooltips {
+  color: var(--secondary) !important;
+}
 .alert {
   border-radius: 15px;
 }

@@ -104,8 +104,13 @@
                 document.getElementById(id).toggleAttribute('hidden');
             }
         </script>
-        <p>To get more detailed directions, click on the step you are confused on or need more help with.</p>
-        <div class="card-deck">
+
+        <div class="alert alert-info" role="alert">
+            <strong>Info!</strong>To get more detailed directions, click on the step you are confused on or need more
+            help with.
+        </div>
+
+        <div class="card-deck mt-4">
             <div class="card">
                 <!-- <img class="card-img-top" src="" alt=""> -->
                 <div class="card-body">
@@ -131,7 +136,7 @@
                         <li class="list-group-item clickable" onclick="toggleStep('wifi-step-two')">Check your interent
                             connection.
                             <ol class="faq-step text-muted" id="wifi-step-two" hidden>
-                                <li>Press the <i class="fa fa-windows" aria-hidden="true"></i> key and I
+                                <li>Press the <i class="fa fa-windows" aria-hidden="true"></i> key and <b>I</b>
                                     at the same time.
                                 </li>
                                 <li>Search for <b>Wifi</b> in the search bar and click the top result.
@@ -160,27 +165,94 @@
                             </ol>
                         </li>
                     </ol>
-                    <div class="alert alert-danger mt-3" role="alert">
-                        <strong>Still Not Working?</strong> You may need to go seek help from IT.
-                    </div>
+                    </p>
                 </div>
             </div>
             <div class="card">
-                <!-- <img class="card-img-top" src="" alt=""> -->
                 <div class="card-body">
                     <h4 class="card-title"><i class="fa fa-volume-mute" aria-hidden="true"></i> No Audio</h4>
                     <p class="card-text">
-                    <ul class="list-group">
-                        <li class="list-group-item">Active item</li>
-                        <li class="list-group-item">Item</li>
-                        <li class="list-group-item">Disabled item</li>
-                    </ul>
+                    <ol class="list-group">
+                        <li class="list-group-item clickable" onclick="toggleStep('audio-step-one')">Check your volume.
+                            <ol class="faq-step text-muted" id="audio-step-one" hidden>
+                                <li>Find the keys on your keboard with <i class="fa fa-volume-down"
+                                        aria-hidden="true"></i> and <i class="fa fa-volume-up" aria-hidden="true"></i>
+                                    icons printed on them.
+                                </li>
+                                <li>Press on the <i class="fa fa-volume-up" aria-hidden="true"></i> icon until you hear
+                                    the audio you are playing.
+                                </li>
+                            </ol>
+                        </li>
+                        <li class="list-group-item clickable" onclick="toggleStep('audio-step-two')">Check your audio
+                            output.
+                            <ol class="faq-step text-muted" id="audio-step-two" hidden>
+                                <li>Press the <i class="fa fa-windows" aria-hidden="true"></i> key and <b>I</b>
+                                    at the same time.
+                                </li>
+                                <li>Search for <b>Audio Output</b> in the search bar and click the top result.
+                                </li>
+                                <li>What does it say? If it says anything other than <b>Internal Speakers</b> (Or the
+                                    device you intend to use if you are using custom audio outputs, like headphones),
+                                    set it to that device by clicking on the dropdown and selecting the output you need.
+                                </li>
+                            </ol>
+                        </li>
+                        <li class="list-group-item clickable" onclick="toggleStep('audio-step-three')">Restart your
+                            laptop.
+                            <ol class="faq-step text-muted" id="audio-step-three" hidden>
+                                <li>Save all of your work. Restarting will delete any unsaved documents or projects.
+                                </li>
+                                <li><b>Do not</b> press and hold the physical power button - this is not good for the
+                                    computer.
+                                    Instead, press the <i class="fa fa-windows" aria-hidden="true"></i> <b>Windows
+                                        Start</b> menu and press the power buton, and click restart.</li>
+                                <li>It will restart on its own, so wait until it is done. Log in to <a
+                                        title="Don't know how to log in?" href="#loggingin">your account</a> and try to
+                                    connect to wifi again.
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title"> <i class="fa fa-download" aria-hidden="true"></i> Example Issue</h4>
+                    <p class="card-text">
+                    <ol class="list-group">
+                        <li class="list-group-item clickable" onclick="toggleStep('test-step-one')">Example troubleshoot
+                            option.
+                            <ol class="faq-step text-muted" id="test-step-one" hidden>
+                                <li>Example detail steps with <b>bold lettering</b>.
+                                </li>
+                            </ol>
+                        </li>
+                        <li class="list-group-item clickable" onclick="toggleStep('test-step-two')">Example troubleshoot
+                            option two.
+                            <ol class="faq-step text-muted" id="test-step-two" hidden>
+                                <li>Example detial step with <i class="fa fa-hourglass" aria-hidden="true"></i> icons.
+                                </li>
+                            </ol>
+                        </li>
+                        <li class="list-group-item clickable" onclick="toggleStep('test-step-three')">Example
+                            troubleshoot option three.
+                            <ol class="faq-step text-muted" id="test-step-three" hidden>
+                                <li>Example detail step with link to <a title="Click me!" href="#loggingin">another
+                                        location</a> on this page.
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
                     </p>
                 </div>
             </div>
         </div>
+        <div class="alert alert-danger mt-3" role="alert">
+            <strong>Still Not Working?</strong> You may need to go seek help from IT.
+        </div>
         <div class="card mt-5" id="laptoploan">
-            <!-- <img class="card-img-top" src="holder.js/100x180/" alt=""> -->
             <div class="card-body">
                 <h4 class="card-title"><i class="fa fa-user-circle" aria-hidden="true"></i> LaptopLoan</h4>
                 <p class="card-text">Why is logging in with LaptopLoan an issue?
@@ -201,10 +273,10 @@
             });
         </script>
         <div class="card mt-5" id="loggingin">
-            <!-- <img class="card-img-top" src="holder.js/100x180/" alt=""> -->
             <div class="card-body">
                 <h4 class="card-title"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Logging In</h4>
                 <p class="card-text">Can't log in / remember your login information?
+                </p>
                 <div class="list-group">
                     <p>School login accounts for students are formatted like this:</p>
                     <div class="d-flex flex-column justify-content-center align-items-center">
@@ -223,6 +295,7 @@
                             <p class="text-muted text-sm">Example of constructed username: 22whitem</p>
                         </div>
                     </div>
+                    <hr>
                     <p class="mt-1">Your password is formatted as follows:</p>
                     <div class="d-flex flex-column justify-content-center align-items-center">
                         <div class="d-flex justify-content-center align-items-center">
@@ -240,8 +313,15 @@
                             <p class="text-muted text-sm">Example of constructed password: L0612345!</p>
                         </div>
                     </div>
+                    <hr>
+                    <p class="mt-1">Still can't login? It might be that you are not connected to wifi, or your
+                        computer is not connected to the <span class="tooltips" data-toggle="tooltip"
+                            data-placement="bottom"
+                            title="The 'domain' is what your computer talks with to let you log in. If it can't connect, it can't ask to log you in.">
+                            domain</span>. If you can't connect to the domain, you will get a message that mentions
+                        that. If you do get an issue where that message displays, please see IT for help.
+                    </p>
                 </div>
-                </p>
             </div>
         </div>
     </main>
