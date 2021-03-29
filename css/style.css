@@ -74,6 +74,10 @@ html {
   align-items: center;
 }
 
+.alert {
+  border-radius: 15px;
+}
+
 /* Navbar */
 @media (prefers-color-scheme: light) {
   nav {

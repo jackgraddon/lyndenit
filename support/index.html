@@ -14,9 +14,9 @@
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/e80db28d62.js" crossorigin="anonymous"></script>
     <!-- Personal CSS -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/ico" href="images/lynden/lyndenFavicon.ico" />
+    <link rel="shortcut icon" type="image/ico" href="../images/lynden/lyndenFavicon.ico" />
     <!-- Google Site Search -->
     <script async src="https://cse.google.com/cse.js?cx=f35faae7eae0e71ee"></script>
 </head>
@@ -35,7 +35,7 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-sm sticky-top">
-        <a class="navbar-brand" href="./">
+        <a class="navbar-brand" href="../">
             <div class="navbar-brand-img"></div>
         </a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
@@ -45,21 +45,21 @@
         <!-- Navigation Links -->
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="./">Home <span class="sr-only">(current)</span></a>
-                </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./support/">Support</a>
+                    <a class="nav-link" href="../">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="../support/">Support</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="./faq/" id="dropdownId" data-toggle="dropdown"
+                    <a class="nav-link dropdown-toggle" href="../faq/" id="dropdownId" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">FAQ</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
                         <a class="dropdown-item" href="#"><i class="fa fa-wifi" aria-hidden="true"></i> No WiFi</a>
                         <a class="dropdown-item" href="#"><i class="fa fa-volume-mute" aria-hidden="true"></i> No
                             Audio</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="./faq/">View All</a>
+                        <a class="dropdown-item" href="../faq/">View All</a>
                     </div>
                 </li>
             </ul>
@@ -76,10 +76,12 @@
                 if (ua.indexOf('safari') != -1) {
                     if (ua.indexOf('chrome') > -1) {
                         console.log('Using a Chromium Base - Good to go!')
+                        $(".safari-warning-search").addClass("hidden");
+                        $(".search").removeClass('hidden')
                     } else {
                         console.log('Using Safari');
-                        var warning = document.getElementById('safari-warning-search');
                         $(".safari-warning-search").removeClass("hidden");
+                        $(".search").addClass('hidden')
                     }
                 }
             </script>
@@ -91,19 +93,39 @@
         <div class="jumbotron mt-5" style="height: 340px;">
             <span class="d-flex" style="align-items: center;">
                 <span class="w-100">
-                    <h1>Lynden Tech Support</h1>
-                    <p class="lead">Easy to Use Tech Support for Lynden High School</p>
-                    <a class="btn btn-primary" href="./search/" role="button">Find Your Issue</a>
-                    <a class="btn btn-primary" href="./faq/" role="button">Search FAQ</a>
+                    <h1>Support</h1>
+                    <p class="lead">Get Detailed Help for Uncommon Problems</p>
                 </span>
-                <img src="./images/lynden/svg/lyndenIcon.svg" class="float-right" height="200px">
+                <img src="../images/lynden/svg/lyndenIcon.svg" class="float-right" height="200px">
             </span>
         </div>
 
         <div class="mt-5 ml-4 mr-4">
-            <h1>
-                Text and stuff
-            </h1>
+            <h1>Choose your support type...</h1>
+            <div class="card-deck">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Issues</h4>
+                        <p class="card-text">Get help on an issue with your computer.</p>
+                        <a class="btn btn-primary" href="./issues/">Get Help</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Tutorials</h4>
+                        <p class="card-text">Learn how to do new things with your computer.</p>
+                        <a class="btn btn-primary" href="./learn/">Learn</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Other</h4>
+                        <p class="card-text">Not seeing what you want? Use our search tool!</p>
+                        <a class="btn btn-primary" href="https://cse.google.com/cse?cx=f35faae7eae0e71ee"
+                            target="_blank">Search</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 

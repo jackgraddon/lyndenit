@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <head>
     <title>Lynden IT | FAQ</title>
@@ -33,7 +34,7 @@
         crossorigin="anonymous"></script>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-sm sticky-top">
+    <nav class="navbar navbar-expand-sm">
         <a class="navbar-brand" href="../">
             <div class="navbar-brand-img"></div>
         </a>
@@ -48,7 +49,7 @@
                     <a class="nav-link" href="../">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Support</a>
+                    <a class="nav-link" href="../support/">Support</a>
                 </li>
                 <li class="nav-item active dropdown">
                     <a class="nav-link dropdown-toggle" href="../faq/" id="dropdownId" data-toggle="dropdown"
@@ -159,7 +160,9 @@
                             </ol>
                         </li>
                     </ol>
-                    <p>Still not working?</p>
+                    <div class="alert alert-danger mt-3" role="alert">
+                        <strong>Still Not Working?</strong> You may need to go seek help from IT.
+                    </div>
                 </div>
             </div>
             <div class="card">
@@ -185,7 +188,9 @@
                     <p>LaptopLoan was an account made in early 2020 when the school was handing out laptops for kids to
                         use at home. As of (date of deactivation), LaptopLoan was disabled, and its access to many of
                         the necesary things you need to do your schoolwork was revoked. If you are unable to do certain
-                        things, like connect to wifi, it is possible you are logged in with LaptopLoan.</p>
+                        things, like connect to wifi, it is possible you are logged in with LaptopLoan. The easiest way
+                        to fix this is to log out of LaptopLoan, and log in using <a title="Don't know how to log in?"
+                            href="#loggingin">your account</a>.</p>
                 </div>
                 </p>
             </div>
@@ -198,7 +203,7 @@
         <div class="card mt-5" id="loggingin">
             <!-- <img class="card-img-top" src="holder.js/100x180/" alt=""> -->
             <div class="card-body">
-                <h4 class="card-title"><i class="fa fa-user-circle" aria-hidden="true"></i> Logging In</h4>
+                <h4 class="card-title"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Logging In</h4>
                 <p class="card-text">Can't log in / remember your login information?
                 <div class="list-group">
                     <p>School login accounts for students are formatted like this:</p>
@@ -246,7 +251,8 @@
             Rights Reserved.
         </p>
         <p class="nav-link p-1 m-1 text-muted">Developed by Jack Graddon</p>
-        <!-- <p class="nav-link p-1 m-1 text-black-50">Add something.</p> -->
+        <p class="nav-link p-1 m-1 text-black-50">Provide feedback on the site <a target="_blank"
+                href="https://github.com/jackgraddon/lyndenit/issues/new/choose">here.</a></p>
     </nav>
     <script type="text/javascript">
         var date = new Date();
