@@ -16,9 +16,11 @@
     <!-- Personal CSS -->
     <link rel="stylesheet" href="../css/style.css">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/ico" href="images/lynden/lyndenFavicon.ico" />
+    <link rel="shortcut icon" type="image/ico" href="../images/lynden/lyndenFavicon.ico" />
     <!-- Google Site Search -->
     <script async src="https://cse.google.com/cse.js?cx=f35faae7eae0e71ee"></script>
+    <!-- jsCookie (for tracking progression in Tech Tutorials) -->
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 </head>
 
 <body>
@@ -51,14 +53,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../support/">Support</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">FAQ</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownId">
-                        <a class="dropdown-item" href="#"><i class="fa fa-wifi" aria-hidden="true"></i> No WiFi</a>
-                        <a class="dropdown-item" href="#"><i class="fa fa-volume-mute" aria-hidden="true"></i> No
-                            Audio</a>
-                    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="../faq/">FAQ</a>
                 </li>
             </ul>
         </div>
@@ -72,6 +68,10 @@
                     <span class=" w-100">
                         <h1>Find Your Issue</h1>
                         <p class="lead">Use the search tool to find your issue.</p>
+                        <span>
+                            <p class="text-sm">Before you search, check out our FAQ page for common tech issues.</p>
+                            <a class="btn btn-primary" href="../faq/" role="button">Search FAQ</a>
+                        </span>
                     </span>
                     <img src="../images/lynden/svg/lyndenIcon.svg" class="float-right" height="200px">
                 </span>

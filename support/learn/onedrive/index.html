@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <head>
-    <title>Lynden IT | Home</title>
+    <title>Lynden IT | Learn</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,21 +14,13 @@
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/e80db28d62.js" crossorigin="anonymous"></script>
     <!-- Personal CSS -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../../../css/style.css">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/ico" href="images/lynden/lyndenFavicon.ico" />
+    <link rel="shortcut icon" type="image/ico" href="../../../images/lynden/lyndenFavicon.ico" />
     <!-- Google Site Search -->
     <script async src="https://cse.google.com/cse.js?cx=f35faae7eae0e71ee"></script>
     <!-- jsCookie (for tracking progression in Tech Tutorials) -->
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-    <script type="text/javascript">
-        Cookies.set('agreed', false);
-        if (Cookies.get('agreed') == false) {
-            $(function () {
-                $('#cookieAgreement').modal('show');
-            });
-        }
-    </script>
 </head>
 
 <body>
@@ -43,31 +35,9 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-    <!-- Cookie Agreement -->
-    <div class="modal fade" id="cookieAgreement" tabindex="-1" role="dialog" aria-labelledby="exampleModal3Label"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModal3Label">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-sm sticky-top">
-        <a class="navbar-brand" href="./">
+    <nav class="navbar navbar-expand-sm">
+        <a class="navbar-brand" href="../../../">
             <div class="navbar-brand-img"></div>
         </a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
@@ -77,14 +47,14 @@
         <!-- Navigation Links -->
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="./">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link" href="../../../">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./support/">Support</a>
+                    <a class="nav-link" href="../../../support/">Support</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./faq/">FAQ</a>
+                    <a class="nav-link" href="../../../faq/">FAQ</a>
                 </li>
             </ul>
             <!-- Search Bar -->
@@ -100,10 +70,12 @@
                 if (ua.indexOf('safari') != -1) {
                     if (ua.indexOf('chrome') > -1) {
                         console.log('Using a Chromium Base - Good to go!')
+                        $(".safari-warning-search").addClass("hidden");
+                        $(".search").removeClass('hidden')
                     } else {
                         console.log('Using Safari');
-                        var warning = document.getElementById('safari-warning-search');
                         $(".safari-warning-search").removeClass("hidden");
+                        $(".search").addClass('hidden')
                     }
                 }
             </script>
@@ -115,20 +87,56 @@
         <div class="jumbotron mt-5" style="height: 340px;">
             <span class="d-flex" style="align-items: center;">
                 <span class="w-100">
-                    <h1>Lynden Tech Support</h1>
-                    <p class="lead">Easy to Use Tech Support for Lynden High School</p>
-                    <a class="btn btn-primary" href="./search/" role="button">Find Your Issue</a>
-                    <a class="btn btn-primary" href="./faq/" role="button">Search FAQ</a>
+                    <h1>OneDrive</h1>
+                    <p class="lead">Learn how use OneDrive.</p>
                 </span>
-                <img src="./images/lynden/svg/lyndenIcon.svg" class="float-right" height="200px">
+                <img src="../../../images/lynden/svg/lyndenIcon.svg" class="float-right" height="200px">
             </span>
         </div>
 
         <div class="mt-5 ml-4 mr-4">
-            <h1>
-                Text and stuff
-            </h1>
+            <h1 class="mt-0">Learn the Basics of OneDrive</h1>
+            <div class="card-deck">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Syncing</h4>
+                        <p class="card-text">How to sync your personal computer with OneDrive to keep your school files
+                            available even when your school computer isn't.</p>
+                        <a class="btn btn-primary" href="#personal">Learn</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">School</h4>
+                        <p class="card-text">How to enable OneDrive on your School Computer to keep your school files in
+                            the cloud, ready to access at any point from any device.</p>
+                        <a class="btn btn-primary" href="#school">Learn</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Access OneDrive</h4>
+                        <p class="card-text">How to access your OneDrive from any device either by web or by app so you
+                            can access your files on the go.</p>
+                        <a class="btn btn-primary" href="onthego">Learn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="alert alert-info clickable mt-2"
+                onclick="window.open('https://support.microsoft.com/en-us/onedrive')">
+                <a><strong>Want to Learn More?</strong> Visit Microsoft's official OneDrive page to learn more!</a>
+            </div>
         </div>
+
+        <!-- Personal OneDrive for Home Computers (PC and Mac Guide) -->
+        <span id="personal" class="mt-5">
+            <div class="jumbotron mt-5">
+                <h1>Syncing OneDrive with your Personal Computer</h1>
+                <p class="lead">Learn how to install and setup Microsoft OneDrive for your personal/home computer.</p>
+            </div>
+
+
+        </span>
     </main>
 
     <nav class="nav justify-content-center align-items-center p-3 mt-5 flex-column">
