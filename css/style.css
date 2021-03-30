@@ -257,6 +257,12 @@ a.navbar-brand .navbar-brand-img {
   border-radius: 15px;
 }
 
+/* Modal */
+.modal div,
+.modal h5 {
+  color: black !important;
+}
+
 /* List Group */
 @media (prefers-color-scheme: light) {
   .list-group {

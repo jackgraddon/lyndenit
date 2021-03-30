@@ -21,14 +21,6 @@
     <script async src="https://cse.google.com/cse.js?cx=f35faae7eae0e71ee"></script>
     <!-- jsCookie (for tracking progression in Tech Tutorials) -->
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-    <script type="text/javascript">
-        Cookies.set('agreed', false);
-        if (Cookies.get('agreed') == false) {
-            $(function () {
-                $('#cookieAgreement').modal('show');
-            });
-        }
-    </script>
 </head>
 
 <body>
@@ -44,22 +36,36 @@
         crossorigin="anonymous"></script>
 
     <!-- Cookie Agreement -->
+    <script type="text/javascript">
+        $('document').ready(function () {
+            if (!Cookies.get('agreed')) {
+                $('#cookieAgreement').modal('show');
+            } else {
+                console.log(Cookies.get('agreed'));
+            }
+        })
+        function responseCookies(value) {
+            Cookies.set('agreed', value);
+            console.log(Cookies.get('agreed'));
+        }
+    </script>
+
     <div class="modal fade" id="cookieAgreement" tabindex="-1" role="dialog" aria-labelledby="exampleModal3Label"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModal3Label">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <h5 class="modal-title">This Site Uses Cookies</h5>
                 </div>
                 <div class="modal-body">
-                    ...
+                    This website uses cookies to track your progress in the Learn section of the site. If you do not
+                    want to track your progress, you can click deny. If you want to track, click allow.
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        onclick="javascript:responseCookies(false);">Deny</button>
+                    <button type="button" class="btn btn-primary"
+                        onclick="javascript:responseCookies(true);">Allow</button>
                 </div>
             </div>
         </div>
