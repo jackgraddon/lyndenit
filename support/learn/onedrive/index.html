@@ -93,10 +93,10 @@
                     </p>
                     <span>
                         <p>
-                            <i class="fa fa-check-circle-o" aria-hidden="true" id="completed"></i>
+                            <i class="fa fa-check-circle-o" aria-hidden="true" id="completed" hidden></i>
                             <i class="fa fa-times-circle-o" aria-hidden="true" id="notstarted"></i>
-                            <i class="fa fa-dot-circle-o" aria-hidden="true" id="working"></i>
-                            <span id="status">Test</span>
+                            <i class="fa fa-dot-circle-o" aria-hidden="true" id="working" hidden></i>
+                            <span id="status">You haven't started this yet.</span>
                         </p>
                     </span>
                 </span>
@@ -105,8 +105,44 @@
         </div>
 
         <!-- Cookie Script -->
-        <script src="../../../script/cookies.js"></script>
+        <!-- <script src="../../../script/cookies.js"></script> -->
         <script type="text/javascript">
+            let allowed = Cookies.get("agreed");
+            if (allowed == true) {
+                function projectTracker(projectIn, status, other) {
+                    // let project = projectIn.toString();
+                    let project = "OneDrive";
+                    let projectStatus = Cookies.get(project);
+                    let jumbotronStatus = document.getElementById("status");
+                    let completedIcon = document.getElementById("completed");
+                    let workingIcon = document.getElementById("working");
+                    let notStartedIcon = document.getElementById("notStarted");
+                    if (!status) {
+                        if (!projectStatus) {
+                            Cookies.set(project, "started");
+                            jumbotronStatus.innerText = `You have started learning about ${project}! Your progress will be tracked and stored locally on your computer.`;
+                        } else if (projectStatus == "started") {
+                            Cookies.set(project, "learning");
+                            jumbotronStatus.innerText = `Welcome back! Just a reminder that your progress will be tracked and stored locally on your computer.`;
+                        } else if (projectStatus == "learning") {
+                            jumbotronStatus.innerText = `Welcome back! Let's finish up this lesson!`;
+                        } else if (projectStatus == "finished") {
+                            jumbotronStatus.innerText = `You have completed your lessons in ${project}! Nice work.`;
+                        }
+                    } else {
+                        Cookies.set(project, status);
+                        console.log(Cookies.get(project));
+                        if (projectStatus == "started") {
+                            Cookies.set(project, "learning");
+                            jumbotronStatus.innerText = `Welcome back! Just a reminder that your progress will be tracked and stored locally on your computer.`;
+                        } else if (projectStatus == "learning") {
+                            jumbotronStatus.innerText = `Welcome back! Let's finish up this lesson!`;
+                        } else if (projectStatus == "finished") {
+                            jumbotronStatus.innerText = `You have completed your lessons in ${project}! Nice work.`;
+                        }
+                    }
+                }
+            }
             projectTracker('OneDrive');
         </script>
 
@@ -153,6 +189,32 @@
             </div>
 
 
+        </span>
+        <!-- Guide 2 -->
+
+        <!-- Guide 3 -->
+
+        <!-- Completed Form -->
+        <script>
+            let jumbotronStatus = document.getElementById("status");
+            let completedIcon = document.getElementById("completed");
+            let workingIcon = document.getElementById("working");
+            let notStartedIcon = document.getElementById("notStarted");
+
+            function cookieWorking() {
+                projectTracker('OneDrive', 'working');
+            }
+            function cookieCompleted() {
+                projectTracker('OneDrive', 'completed');
+            }
+        </script>
+        <span id="comletedForm" mt-5>
+            <div class="jumbotron">
+                <h1>Complete?</h1>
+                <p class="lead">Have you completed this lesson in OneDrive?</p>
+                <a class="btn btn-secondary" href="#" onclick="javascript:cookieWorking()">No</a>
+                <a class="btn btn-primary" href="#" onclick="javascript:cookieCompleted()">Yes</a>
+            </div>
         </span>
     </main>
 
