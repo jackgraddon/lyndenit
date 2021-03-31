@@ -1,8 +1,13 @@
 let allowed = Cookies.get("agreed");
 if (allowed == true) {
-  function projectTracker(project, status, other) {
+  function projectTracker(projectIn, status, other) {
+    // let project = projectIn.toString();
+    let project = "OneDrive";
     let projectStatus = Cookies.get(project);
     let jumbotronStatus = document.getElementById("status");
+    let completedIcon = document.getElementById("completed");
+    let workingIcon = document.getElementById("working");
+    let notStartedIcon = document.getElementById("notStarted");
     if (!status) {
       if (!projectStatus) {
         Cookies.set(project, "started");
@@ -17,6 +22,7 @@ if (allowed == true) {
       }
     } else {
       Cookies.set(project, status);
+      console.log(Cookies.get(project));
     }
   }
 }
