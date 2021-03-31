@@ -48,7 +48,7 @@
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="../../../">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../../../">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../../../support/">Support</a>
@@ -82,19 +82,34 @@
         </div>
     </nav>
 
+    <!-- Cookie Script -->
+    <script src="../../../script/cookies.js"></script>
+    <script type="text/javascript">
+        projectTracker('OneDrive');
+    </script>
+
     <!-- Content -->
     <main class="container">
         <div class="jumbotron mt-5" style="height: 340px;">
             <span class="d-flex" style="align-items: center;">
                 <span class="w-100">
                     <h1>OneDrive</h1>
-                    <p class="lead">Learn how use OneDrive.</p>
+                    <p class="lead">Learn how use OneDrive
+                    </p>
+                    <span>
+                        <p>
+                            <i class="fa fa-check-circle-o" aria-hidden="true" id="completed"></i>
+                            <i class="fa fa-times-circle-o" aria-hidden="true" id="notstarted"></i>
+                            <i class="fa fa-dot-circle-o" aria-hidden="true" id="working"></i>
+                            <span id="status">Test</span>
+                        </p>
+                    </span>
                 </span>
                 <img src="../../../images/lynden/svg/lyndenIcon.svg" class="float-right" height="200px">
             </span>
         </div>
 
-        <div class="mt-5 ml-4 mr-4">
+        <div class="mt-5">
             <h1 class="mt-0">Learn the Basics of OneDrive</h1>
             <div class="card-deck">
                 <div class="card">
@@ -127,6 +142,7 @@
                 <a><strong>Want to Learn More?</strong> Visit Microsoft's official OneDrive page to learn more!</a>
             </div>
         </div>
+
 
         <!-- Personal OneDrive for Home Computers (PC and Mac Guide) -->
         <span id="personal" class="mt-5">

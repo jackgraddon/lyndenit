@@ -83,6 +83,20 @@ html {
   border-radius: 15px;
 }
 
+/* Project Status Icons */
+#completed {
+  color: var(--primary) !important;
+  fill: var(--primary) !important;
+}
+#notstarted {
+  color: red !important;
+  fill: red !important;
+}
+#working {
+  color: var(--secondary) !important;
+  fill: var(--secondary) !important;
+}
+
 /* Navbar */
 @media (prefers-color-scheme: light) {
   nav {
