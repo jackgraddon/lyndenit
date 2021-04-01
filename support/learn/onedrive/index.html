@@ -20,7 +20,7 @@
     <!-- Google Site Search -->
     <script async src="https://cse.google.com/cse.js?cx=f35faae7eae0e71ee"></script>
     <!-- jsCookie (for tracking progression in Tech Tutorials) -->
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script> -->
 </head>
 
 <body>
@@ -106,7 +106,7 @@
 
         <!-- Cookie Script -->
         <!-- <script src="../../../script/cookies.js"></script> -->
-        <script type="text/javascript">
+        <!-- <script type="text/javascript">
             let allowed = Cookies.get("agreed");
             if (allowed == true) {
                 function projectTracker(projectIn, status, other) {
@@ -144,7 +144,7 @@
                 }
             }
             projectTracker('OneDrive');
-        </script>
+        </script> -->
 
         <div class="mt-5">
             <h1 class="mt-0">Learn the Basics of OneDrive</h1>
@@ -182,12 +182,84 @@
 
 
         <!-- Personal OneDrive for Home Computers (PC and Mac Guide) -->
+        <script type="text/javascript">
+            let os = 'windows';
+            function toggleImage() {
+                document.getElementById('personal').getElementsByTagName('img').toggleAttribute('hidden');
+            }
+            function toggleOS() {
+                document.getElementById('windows').toggleAttribute('hidden');
+                document.getElementById('mac').toggleAttribute('hidden');
+                if (os == 'windows') {
+                    document.getElementById('toggleOS').innerText = 'Show Windows Steps';
+                    os = 'mac';
+                } else {
+                    document.getElementById('toggleOS').innerText = 'Show macOS Steps';
+                    os = 'windows';
+                }
+            }
+        </script>
         <span id="personal" class="mt-5">
             <div class="jumbotron mt-5">
                 <h1>Syncing OneDrive with your Personal Computer</h1>
                 <p class="lead">Learn how to install and setup Microsoft OneDrive for your personal/home computer.</p>
+                <button type="button" id="toggleOS" class="btn btn-primary" onclick="toggleOS()">Show macOS
+                    Steps</button>
             </div>
-
+            <p class="text-sm clickable">Toggle Image Visibility</p>
+            <div class="card-deck" id="windows">
+                <div class="card">
+                    <img class="card-img-top" src="holder.js/100x180/" alt="" hidden>
+                    <div class="card-body">
+                        <h4 class="card-title">Step One</h4>
+                        <p class="card-text">If you don't have it already, install the <a
+                                href="https://go.microsoft.com/fwlink/p/?linkid=844652">OneDrive for Windows</a> app
+                            from Microsoft.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/windows/startMenu.png" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Step Two</h4>
+                        <p class="card-text">If it didn't open automatically, open the <i class="fa fa-windows"
+                                aria-hidden="true"></i> Start Menu and search for <b>OneDrive</b>. Open the app from
+                            there.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/windows/launchScreen.png" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Step Three</h4>
+                        <p class="card-text">Once the app opens, ender your <a href="../../../faq/#loggingin">school
+                                account email and password.</a></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/windows/launchScreen.png" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Step Three</h4>
+                        <p class="card-text">Once the app opens,</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-deck" id="mac" hidden>
+                <div class="card">
+                    <img class="card-img-top" src="holder.js/100x180/" alt="" hidden>
+                    <div class="card-body">
+                        <h4 class="card-title">Step One</h4>
+                        <p class="card-text">If you don't have it already, install the <a
+                                href="https://go.microsoft.com/fwlink/?linkid=823060">OneDrive for Mac</a> app from
+                            Microsoft.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="holder.js/100x180/" alt="" hidden>
+                    <div class="card-body">
+                        <h4 class="card-title">Title</h4>
+                        <p class="card-text">Text</p>
+                    </div>
+                </div>
+            </div>
 
         </span>
         <!-- Guide 2 -->
@@ -195,7 +267,7 @@
         <!-- Guide 3 -->
 
         <!-- Completed Form -->
-        <script>
+        <!-- <script>
             let jumbotronStatus = document.getElementById("status");
             let completedIcon = document.getElementById("completed");
             let workingIcon = document.getElementById("working");
@@ -215,7 +287,7 @@
                 <a class="btn btn-secondary" href="#" onclick="javascript:cookieWorking()">No</a>
                 <a class="btn btn-primary" href="#" onclick="javascript:cookieCompleted()">Yes</a>
             </div>
-        </span>
+        </span> -->
     </main>
 
     <nav class="nav justify-content-center align-items-center p-3 mt-5 flex-column">
