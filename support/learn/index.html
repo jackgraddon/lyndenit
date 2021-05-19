@@ -64,23 +64,21 @@
                 <div class="gcse-searchbox-only"></div>
             </div>
             <!-- Detect Safari -->
-            <!-- <p class="safari-warning-search hidden">
-                <i class="fa fa-safari" aria-hidden="true"></i> Search doesn't work on Safari
+            <p class="safari-warning-search hidden">
+                Search doesn't work on <i class="fa fa-safari" aria-hidden="true"></i>
             </p>
             <script type="application/javascript">
                 var ua = navigator.userAgent.toLowerCase();
                 if (ua.indexOf('safari') != -1) {
                     if (ua.indexOf('chrome') > -1) {
                         console.log('Using a Chromium Base - Good to go!')
-                        $(".safari-warning-search").addClass("hidden");
-                        $(".search").removeClass('hidden')
                     } else {
                         console.log('Using Safari');
+                        var warning = document.getElementById('safari-warning-search');
                         $(".safari-warning-search").removeClass("hidden");
-                        $(".search").addClass('hidden')
                     }
                 }
-            </script> -->
+            </script>
         </div>
     </nav>
 
