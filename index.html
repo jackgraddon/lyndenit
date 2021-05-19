@@ -16,11 +16,13 @@
     <!-- Personal CSS -->
     <link rel="stylesheet" href="./css/style.css">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/ico" href="images/lynden/lyndenFavicon.ico" />
+    <link rel="shortcut icon" type="image/ico" href="./images/lynden/lyndenFavicon.ico" />
     <!-- Google Site Search -->
     <script async src="https://cse.google.com/cse.js?cx=f35faae7eae0e71ee"></script>
     <!-- jsCookie (for tracking progression in Tech Tutorials) -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script> -->
+    <!-- Packery.js -->
+    <script src="https://unpkg.com/packery@2.1/dist/packery.pkgd.min.js"></script>
 </head>
 
 <body>
@@ -74,46 +76,55 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-sm sticky-top">
-        <a class="navbar-brand" href="./">
-            <div class="navbar-brand-img"></div>
-        </a>
-        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
-            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fa fa-bars" aria-hidden="true"></i>
-        </button>
-        <!-- Navigation Links -->
-        <div class="collapse navbar-collapse" id="collapsibleNavId">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="./">Home<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./support/">Support</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./faq/">FAQ</a>
-                </li>
-            </ul>
-            <!-- Search Bar -->
-            <div class="search">
-                <div class="gcse-searchbox-only"></div>
-            </div>
-            <!-- Detect Safari -->
-            <p class="safari-warning-search hidden">
-                <i class="fa fa-safari" aria-hidden="true"></i> Search doesn't work on Safari
-            </p>
-            <script type="application/javascript">
-                var ua = navigator.userAgent.toLowerCase();
-                if (ua.indexOf('safari') != -1) {
-                    if (ua.indexOf('chrome') > -1) {
-                        console.log('Using a Chromium Base - Good to go!')
-                    } else {
-                        console.log('Using Safari');
-                        var warning = document.getElementById('safari-warning-search');
-                        $(".safari-warning-search").removeClass("hidden");
-                    }
-                }
-            </script>
+        <div class="flex-sm-row-reverse w-100">
+            <span class="float-right">
+                <!-- Navigation Links -->
+                <div class="collapse navbar-collapse" id="collapsibleNavId" style="width: 200px;">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="./">Home<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./support/">Support</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./faq/">FAQ</a>
+                        </li>
+                    </ul>
+                    <!-- Search Bar -->
+                    <div class="search">
+                        <div class="gcse-searchbox-only"></div>
+                    </div>
+                    <!-- Detect Safari -->
+                    <p class="safari-warning-search hidden">
+                        <i class="fa fa-safari" aria-hidden="true"></i> Search doesn't work on Safari
+                    </p>
+                    <script type="application/javascript">
+                        var ua = navigator.userAgent.toLowerCase();
+                        if (ua.indexOf('safari') != -1) {
+                            if (ua.indexOf('chrome') > -1) {
+                                console.log('Using a Chromium Base - Good to go!')
+                            } else {
+                                console.log('Using Safari');
+                                var warning = document.getElementById('safari-warning-search');
+                                $(".safari-warning-search").removeClass("hidden");
+                            }
+                        }
+                    </script>
+                </div>
+            </span>
+            <span>
+                <span class="flex-row justify-content-center alight-items-center w-100 h-100">
+                    <a class="navbar-brand" href="./">
+                        <div class="navbar-brand-img"></div>
+                    </a>
+                    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                        data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                    </button>
+                </span>
+            </span>
         </div>
     </nav>
 
@@ -167,7 +178,7 @@
             Rights Reserved.
         </p>
         <p class="nav-link p-1 m-1 text-muted">Developed by Jack Graddon</p>
-        <p class="nav-link p-1 m-1 text-muted">Provide feedback on the site <a target="_blank"
+        <p class="nav-link p-1 m-1 text-muted">Provide feedback on the site <a target="_blank" class="text-info"
                 href="https://github.com/jackgraddon/lyndenit/issues/new/choose">here.</a></p>
     </nav>
     <script type="text/javascript">

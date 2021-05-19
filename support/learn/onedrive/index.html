@@ -21,6 +21,10 @@
     <script async src="https://cse.google.com/cse.js?cx=f35faae7eae0e71ee"></script>
     <!-- jsCookie (for tracking progression in Tech Tutorials) -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script> -->
+    <!-- Packery.js -->
+    <script src="https://unpkg.com/packery@2.1/dist/packery.pkgd.min.js"></script>
+    <!-- Packery.js -->
+    <script src="https://unpkg.com/packery@2.1/dist/packery.pkgd.min.js"></script>
 </head>
 
 <body>
@@ -105,7 +109,7 @@
         </div>
 
         <!-- Cookie Script -->
-        <!-- <script src="../../../script/cookies.js"></script> -->
+        <!-- <script src="https://unpkg.com/packery@2.1/dist/packery.pkgd.min.js"></script> -->
         <!-- <script type="text/javascript">
             let allowed = Cookies.get("agreed");
             if (allowed == true) {
@@ -183,9 +187,16 @@
 
         <!-- Personal OneDrive for Home Computers (PC and Mac Guide) -->
         <script type="text/javascript">
+            let visible = true;
             let os = 'windows';
             function toggleImage() {
-                document.getElementById('personal').getElementsByTagName('img').toggleAttribute('hidden');
+                if (visible) {
+                    $('.card-img-top').hide();
+                    visible = false;
+                } else {
+                    $('.card-img-top').show();
+                    visible = true;
+                }
             }
             function toggleOS() {
                 document.getElementById('windows').toggleAttribute('hidden');
@@ -206,10 +217,11 @@
                 <button type="button" id="toggleOS" class="btn btn-primary" onclick="toggleOS()">Show macOS
                     Steps</button>
             </div>
-            <p class="text-sm clickable">Toggle Image Visibility</p>
-            <div class="card-deck" id="windows">
+            <p class="text-sm clickable" onclick="toggleImage()">Toggle Image Visibility</p>
+            <!-- Windows Steps -->
+            <div class="card-columns col" id="windows">
                 <div class="card">
-                    <img class="card-img-top" src="holder.js/100x180/" alt="" hidden>
+                    <!-- <img class="card-img-top" src="holder.js/100x180/" alt="" hidden> -->
                     <div class="card-body">
                         <h4 class="card-title">Step One</h4>
                         <p class="card-text">If you don't have it already, install the <a
@@ -218,7 +230,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img class="card-img-top" src="./img/windows/startMenu.png" alt="">
+                    <img class="card-img-top" src="./img/windows/startMenu.png" alt="Start Menu showing OneDrive">
                     <div class="card-body">
                         <h4 class="card-title">Step Two</h4>
                         <p class="card-text">If it didn't open automatically, open the <i class="fa fa-windows"
@@ -227,7 +239,8 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img class="card-img-top" src="./img/windows/launchScreen.png" alt="">
+                    <img class="card-img-top" src="./img/windows/launchScreen.png"
+                        alt="OneDrive login screen displayed at launch.">
                     <div class="card-body">
                         <h4 class="card-title">Step Three</h4>
                         <p class="card-text">Once the app opens, ender your <a href="../../../faq/#loggingin">school
@@ -235,13 +248,27 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img class="card-img-top" src="./img/windows/launchScreen.png" alt="">
+                    <img class="card-img-top" src="./img/windows/yourFolder.png"
+                        alt="OneDrive 'Your OneDrive Folder' screen.">
                     <div class="card-body">
-                        <h4 class="card-title">Step Three</h4>
-                        <p class="card-text">Once the app opens,</p>
+                        <h4 class="card-title">Step Four</h4>
+                        <p class="card-text">After logging in, OneDrive will tell you where the folder will be placed on
+                            your computer.</p>
+                        <p class="text-sm card-text">If you wish to change where it is located, this is the best time to
+                            do that.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/windows/readyOnDemand.png"
+                        alt="OneDrive 'Your OneDrive Folder' screen.">
+                    <div class="card-body">
+                        <h4 class="card-title">Step Five</h4>
+                        <p class="card-text">On the 'All your files, ready and on-demand' screen, you'll see how files
+                            are marked to show them as online-only, locally available, or always available.</p>
                     </div>
                 </div>
             </div>
+            <!-- Mac Steps -->
             <div class="card-deck" id="mac" hidden>
                 <div class="card">
                     <img class="card-img-top" src="holder.js/100x180/" alt="" hidden>

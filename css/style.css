@@ -100,9 +100,9 @@ html {
 /* Navbar */
 @media (prefers-color-scheme: light) {
   nav {
-    box-shadow: 10px 10px 99px -20px rgba(128, 128, 128, 0.7);
-    -webkit-box-shadow: 10px 10px 99px -20px rgba(128, 128, 128, 0.7);
-    -moz-box-shadow: 10px 10px 99px -20px rgba(128, 128, 128, 0.7);
+    box-shadow: 5px 5px 99px -30px rgba(128, 128, 128, 0.7);
+    -webkit-box-shadow: 5px 5px 99px -30px rgba(128, 128, 128, 0.7);
+    -moz-box-shadow: 5px 5px 99px -30px rgba(128, 128, 128, 0.7);
   }
   nav,
   .gsc-control-cse,
@@ -152,6 +152,7 @@ html {
   .dropdown-menu {
     background-color: var(--dark) !important;
     border-color: var(--dark) !important;
+    overflow: hidden;
   }
   .dropdown-menu {
     border-color: var(--dark-hover) !important;
@@ -186,6 +187,14 @@ html {
   border-radius: 5px !important;
 }
 
+.navbar-toggler {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  bottom: 30px;
+  right: 15%;
+}
+
 .navbar:hover a.navbar-brand .navbar-brand-img {
   width: 210px;
   height: 80px;
@@ -199,6 +208,14 @@ a.navbar-brand .navbar-brand-img {
   background-image: url("../images/lynden/svg/lyndenBrand.svg");
   background-size: cover;
 }
+
+@media only screen and (max-width: 575px) {
+  a.navbar-brand .navbar-brand-img {
+    width: 210px !important;
+    height: 80px !important;
+  }
+}
+
 /* Searchbar */
 .search {
   width: 240px;
