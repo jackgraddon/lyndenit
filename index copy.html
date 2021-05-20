@@ -42,84 +42,96 @@
             aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fa fa-bars" aria-hidden="true"></i>
         </button>
-        <!-- Navigation Links -->
-        <div class="collapse navbar-collapse" id="collapsibleNavId">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="./">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../support/">Support</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="./faq/" id="dropdownId" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">FAQ</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownId">
-                        <a class="dropdown-item" href="#"><i class="fa fa-wifi" aria-hidden="true"></i> No WiFi</a>
-                        <a class="dropdown-item" href="#"><i class="fa fa-volume-mute" aria-hidden="true"></i> No
-                            Audio</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="./faq/">View All</a>
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-sm sticky-top">
+            <div class="d-flex flex-row-reverse w-100 h-100 align-content-center">
+                <span id="menubar">
+                    <!-- Navigation Links -->
+                    <div class="collapse navbar-collapse" id="collapsibleNavId">
+                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="./">Home<span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./support/">Support</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./faq/">FAQ</a>
+                            </li>
+                        </ul>
+                        <!-- Search Bar -->
+                        <div class="search">
+                            <div class="gcse-searchbox-only"></div>
+                        </div>
+                        <!-- Detect Safari (Search is working on Safari now) -->
+                        <!-- <p class="safari-warning-search hidden">
+                        Search doesn't work on <i class="fa fa-safari" aria-hidden="true"></i>
+                    </p>
+                    <script type="application/javascript">
+                        var ua = navigator.userAgent.toLowerCase();
+                        if (ua.indexOf('safari') != -1) {
+                            if (ua.indexOf('chrome') > -1) {
+                                console.log('Using a Chromium Base - Good to go!')
+                            } else {
+                                console.log('Using Safari - Search may not work properly, hiding...');
+                                var warning = document.getElementById('safari-warning-search');
+                                $(".safari-warning-search").removeClass("hidden");
+                            }
+                        }
+                    </script>-->
                     </div>
-                </li>
-            </ul>
-            <!-- Search Bar -->
-            <div class="search">
-                <div class="gcse-searchbox-only"></div>
-            </div>
-            <!-- Detect Safari -->
-            <p class="safari-warning-search hidden">
-                Search doesn't work on <i class="fa fa-safari" aria-hidden="true"></i>
-            </p>
-            <script type="application/javascript">
-                var ua = navigator.userAgent.toLowerCase();
-                if (ua.indexOf('safari') != -1) {
-                    if (ua.indexOf('chrome') > -1) {
-                        console.log('Using a Chromium Base - Good to go!')
-                    } else {
-                        console.log('Using Safari');
-                        var warning = document.getElementById('safari-warning-search');
-                        $(".safari-warning-search").removeClass("hidden");
-                    }
-                }
-            </script>
-        </div>
-    </nav>
-
-    <!-- Content -->
-    <main class="container">
-        <div class="jumbotron mt-5" style="height: 340px;">
-            <span class="d-flex" style="align-items: center;">
-                <span class="w-100">
-                    <h1>Lynden Tech Support</h1>
-                    <p class="lead">Easy to Use Tech Support for Lynden High School</p>
-                    <a class="btn btn-primary" href="./search/" role="button">Find Your Issue</a>
-                    <a class="btn btn-primary" href="./faq/" role="button">Search FAQ</a>
                 </span>
-                <img src="./images/lynden/svg/lyndenIcon.svg" class="float-right" height="200px">
-            </span>
-        </div>
+                <span class="flex-fill" id="spacer"></span>
+                <span class="float-left" id="brand">
+                    <span class="flex-row justify-content-center alight-items-center w-100 h-100">
+                        <a class="navbar-brand" href="./">
+                            <div class="navbar-brand-img"></div>
+                        </a>
+                        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                            data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <i class="fa fa-bars" aria-hidden="true"></i>
+                        </button>
+                    </span>
+                </span>
+            </div>
+        </nav>
 
-        <div class="mt-5">
-            <h1>
-                Text and stuff
-            </h1>
-        </div>
-    </main>
+        <!-- Content -->
+        <main class="container">
+            <div class="jumbotron mt-5" style="height: 340px;">
+                <span class="d-flex" style="align-items: center;">
+                    <span class="w-100">
+                        <h1>Lynden Tech Support</h1>
+                        <p class="lead">Easy to Use Tech Support for Lynden High School</p>
+                        <a class="btn btn-primary" href="./search/" role="button">Find Your Issue</a>
+                        <a class="btn btn-primary" href="./faq/" role="button">Search FAQ</a>
+                    </span>
+                    <img src="./images/lynden/svg/lyndenIcon.svg" class="float-right" height="200px">
+                </span>
+            </div>
 
-    <nav class="nav justify-content-center align-items-center p-3 mt-5 flex-column">
-        <p class="nav-link p-1 m-1 text-muted">Website &copy;Lynden High School <span id="dateYear"></span>. All
-            Rights Reserved.
-        </p>
-        <p class="nav-link p-1 m-1 text-muted">Developed by Jack Graddon</p>
-        <p class="nav-link p-1 m-1 text-muted">Provide feedback on the site <a target="_blank"
-                href="https://github.com/jackgraddon/lyndenit/issues/new/choose">here.</a></p>
-    </nav>
-    <script type="text/javascript">
-        var date = new Date();
-        var year = date.getFullYear();
-        document.getElementById('dateYear').innerText = year;
-    </script>
+            <div class="mt-5">
+                <h1>
+                    Text and stuff
+                </h1>
+            </div>
+        </main>
+
+        <nav class="nav justify-content-center align-items-center p-3 mt-5 flex-column">
+            <p class="nav-link p-1 m-1 text-muted">Website &copy;Lynden High School <span id="dateYear"></span>. All
+                Rights Reserved.
+            </p>
+            <p class="nav-link p-1 m-1 text-muted">Developed by Jack Graddon</p>
+            <p class="nav-link p-1 m-1 text-muted">Provide feedback on the site <a target="_blank"
+                    href="https://github.com/jackgraddon/lyndenit/issues/new/choose">here.</a></p>
+        </nav>
+        <script type="text/javascript">
+            var date = new Date();
+            var year = date.getFullYear();
+            document.getElementById('dateYear').innerText = year;
+        </script>
 </body>
 
 </html>

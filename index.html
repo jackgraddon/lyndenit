@@ -76,8 +76,8 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-sm sticky-top">
-        <div class="flex-sm-row-reverse w-100">
-            <span class="float-right">
+        <div class="d-flex flex-row-reverse w-100 h-100 align-content-center">
+            <span id="menubar">
                 <!-- Navigation Links -->
                 <div class="collapse navbar-collapse" id="collapsibleNavId">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -105,7 +105,7 @@
                             if (ua.indexOf('chrome') > -1) {
                                 console.log('Using a Chromium Base - Good to go!')
                             } else {
-                                console.log('Using Safari');
+                                console.log('Using Safari - Search may not work properly, hiding...');
                                 var warning = document.getElementById('safari-warning-search');
                                 $(".safari-warning-search").removeClass("hidden");
                             }
@@ -113,7 +113,8 @@
                     </script>-->
                 </div>
             </span>
-            <span>
+            <span class="flex-fill" id="spacer"></span>
+            <span class="float-left" id="brand">
                 <span class="flex-row justify-content-center alight-items-center w-100 h-100">
                     <a class="navbar-brand" href="./">
                         <div class="navbar-brand-img"></div>
