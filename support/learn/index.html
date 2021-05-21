@@ -18,7 +18,14 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/ico" href="../../images/lynden/lyndenFavicon.ico" />
     <!-- Google Site Search -->
-    <script async src="https://cse.google.com/cse.js?cx=f35faae7eae0e71ee"></script>
+    <script async onload="javascript:googleLoaded();" src="https://cse.google.com/cse.js?cx=f35faae7eae0e71ee"></script>
+    <script type="text/javascript">
+        function googleLoaded() {
+            $('#searchbar').removeClass("hidden");
+            $(".safari-warning-search").addClass("hidden");
+            console.log('Google search bar loaded!')
+        }
+    </script>
     <!-- jsCookie (for tracking progression in Tech Tutorials) -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script> -->
     <!-- Packery.js -->
@@ -44,21 +51,21 @@
                 <!-- Navigation Links -->
                 <div class="collapse navbar-collapse" id="collapsibleNavId">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="./">Home<span class="sr-only">(current)</span></a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./support/">Support</a>
+                            <a class="nav-link" href="../../support/">Support</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./faq/">FAQ</a>
+                            <a class="nav-link" href="../../faq/">FAQ</a>
                         </li>
                     </ul>
                     <!-- Search Bar -->
                     <div class="search">
                         <div class="gcse-searchbox-only"></div>
                     </div>
-                    <!-- Detect Safari (Search is working on Safari now) -->
+                    <!-- Detect Safari -->
                     <!-- <p class="safari-warning-search hidden">
                         Search doesn't work on <i class="fa fa-safari" aria-hidden="true"></i>
                     </p>
@@ -91,6 +98,14 @@
             </span>
         </div>
     </nav>
+    <div aria-label="breadcrumb">
+        <ol class="breadcrumb m-0">
+            <li class="breadcrumb-item"><a href="../../">Home</a></li>
+            <li class="breadcrumb-item"><a href="../">Support</a></li>
+            <li class="breadcrumb-item active" aria-current="Issues">Learn</li>
+        </ol>
+    </div>
+
 
     <!-- Content -->
     <main class="container">
@@ -139,8 +154,12 @@
             Rights Reserved.
         </p>
         <p class="nav-link p-1 m-1 text-muted">Developed by Jack Graddon</p>
-        <p class="nav-link p-1 m-1 text-muted">Provide feedback on the site <a target="_blank"
+        <p class="nav-link p-1 m-1 text-muted">Provide feedback on the site <a target="_blank" class="text-info"
                 href="https://github.com/jackgraddon/lyndenit/issues/new/choose">here.</a></p>
+        <!-- Detect Safari -->
+        <p class="safari-warning-search text-muted text-sm">
+            <i class="fa fa-eye-slash" aria-hidden="true"></i> Search has failed to load.
+        </p>
     </nav>
     <script type="text/javascript">
         var date = new Date();

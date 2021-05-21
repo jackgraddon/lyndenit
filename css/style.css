@@ -12,12 +12,14 @@
 
 .hidden {
   display: none !important;
+  height: 0px !important;
   opacity: 0 !important;
 }
 
 html {
   scroll-behavior: smooth;
   user-select: none;
+  overflow-x: hidden;
 }
 
 /* Body */
@@ -211,6 +213,9 @@ a.navbar-brand .navbar-brand-img {
   background-image: url("../images/lynden/svg/lyndenBrand.svg");
   background-size: cover;
 }
+.nav-link {
+  height: 35px;
+}
 
 @media only screen and (max-width: 575px) {
   a.navbar-brand .navbar-brand-img {
@@ -222,6 +227,7 @@ a.navbar-brand .navbar-brand-img {
 /* Searchbar */
 .search {
   width: 240px !important;
+  height: 35px !important;
 }
 @media only screen and (max-width: 575px) {
   .search {
@@ -300,7 +306,30 @@ a.navbar-brand .navbar-brand-img {
 }
 
 .card {
+  border: 0px;
+}
+.card,
+.card img {
   border-radius: 15px;
+}
+.card-deck.steps {
+  display: grid !important;
+  grid-gap: 10px;
+  grid-template-columns: repeat(13, 370px);
+  grid-template-rows: minmax(100px, 100%);
+
+  overflow-x: scroll;
+  scroll-snap-type: x proximity;
+}
+.card-deck.steps .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
 }
 
 /* Modal */

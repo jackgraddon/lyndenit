@@ -18,7 +18,14 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/ico" href="../../../images/lynden/lyndenFavicon.ico" />
     <!-- Google Site Search -->
-    <script async src="https://cse.google.com/cse.js?cx=f35faae7eae0e71ee"></script>
+    <script async onload="javascript:googleLoaded();" src="https://cse.google.com/cse.js?cx=f35faae7eae0e71ee"></script>
+    <script type="text/javascript">
+        function googleLoaded() {
+            $('#searchbar').removeClass("hidden");
+            $(".safari-warning-search").addClass("hidden");
+            console.log('Google search bar loaded!')
+        }
+    </script>
     <!-- jsCookie (for tracking progression in Tech Tutorials) -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script> -->
     <!-- Packery.js -->
@@ -46,21 +53,21 @@
                 <!-- Navigation Links -->
                 <div class="collapse navbar-collapse" id="collapsibleNavId">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="./">Home<span class="sr-only">(current)</span></a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./support/">Support</a>
+                            <a class="nav-link" href="../../../support/">Support</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./faq/">FAQ</a>
+                            <a class="nav-link" href="../../../faq/">FAQ</a>
                         </li>
                     </ul>
                     <!-- Search Bar -->
                     <div class="search">
                         <div class="gcse-searchbox-only"></div>
                     </div>
-                    <!-- Detect Safari (Search is working on Safari now) -->
+                    <!-- Detect Safari -->
                     <!-- <p class="safari-warning-search hidden">
                         Search doesn't work on <i class="fa fa-safari" aria-hidden="true"></i>
                     </p>
@@ -103,14 +110,14 @@
                     <h1>OneDrive</h1>
                     <p class="lead">Learn how use OneDrive
                     </p>
-                    <span>
+                    <!-- <span>
                         <p>
                             <i class="fa fa-check-circle-o" aria-hidden="true" id="completed" hidden></i>
                             <i class="fa fa-times-circle-o" aria-hidden="true" id="notstarted"></i>
                             <i class="fa fa-dot-circle-o" aria-hidden="true" id="working" hidden></i>
                             <span id="status">You haven't started this yet.</span>
                         </p>
-                    </span>
+                    </span> -->
                 </span>
                 <img src="../../../images/lynden/svg/lyndenIcon.svg" class="float-right" height="200px">
             </span>
@@ -207,13 +214,15 @@
                 }
             }
             function toggleOS() {
-                document.getElementById('windows').toggleAttribute('hidden');
-                document.getElementById('mac').toggleAttribute('hidden');
                 if (os == 'windows') {
                     document.getElementById('toggleOS').innerText = 'Show Windows Steps';
+                    $('.windows').addClass('hidden');
+                    $('.mac').removeClass('hidden');
                     os = 'mac';
                 } else {
                     document.getElementById('toggleOS').innerText = 'Show macOS Steps';
+                    $('.windows').removeClass('hidden');
+                    $('.mac').addClass('hidden');
                     os = 'windows';
                 }
             }
@@ -224,10 +233,11 @@
                 <p class="lead">Learn how to install and setup Microsoft OneDrive for your personal/home computer.</p>
                 <button type="button" id="toggleOS" class="btn btn-primary" onclick="toggleOS()">Show macOS
                     Steps</button>
+                <p class="text-sm clickable pb-0 mt-2" onclick="toggleImage()">Toggle Image Visibility</p>
             </div>
-            <p class="text-sm clickable" onclick="toggleImage()">Toggle Image Visibility</p>
+
             <!-- Windows Steps -->
-            <div class="card-columns col" id="windows">
+            <div class="card-deck steps windows">
                 <div class="card">
                     <!-- <img class="card-img-top" src="holder.js/100x180/" alt="" hidden> -->
                     <div class="card-body">
@@ -235,6 +245,9 @@
                         <p class="card-text">If you don't have it already, install the <a
                                 href="https://go.microsoft.com/fwlink/p/?linkid=844652">OneDrive for Windows</a> app
                             from Microsoft.</p>
+                        <p class="text-sm text-muted">If you're using Windows 10, your computer likely already has the
+                            OneDrive
+                            app installed - skip to step 2.</p>
                     </div>
                 </div>
                 <div class="card">
@@ -251,7 +264,7 @@
                         alt="OneDrive login screen displayed at launch.">
                     <div class="card-body">
                         <h4 class="card-title">Step Three</h4>
-                        <p class="card-text">Once the app opens, ender your <a href="../../../faq/#loggingin">school
+                        <p class="card-text">Once the app opens, enter your <a href="../../../faq/#loggingin">school
                                 account email and password.</a></p>
                     </div>
                 </div>
@@ -262,7 +275,8 @@
                         <h4 class="card-title">Step Four</h4>
                         <p class="card-text">After logging in, OneDrive will tell you where the folder will be placed on
                             your computer.</p>
-                        <p class="text-sm card-text">If you wish to change where it is located, this is the best time to
+                        <p class="text-sm text-muted">If you wish to change where it is located, this is the best time
+                            to
                             do that.</p>
                     </div>
                 </div>
@@ -275,9 +289,24 @@
                             are marked to show them as online-only, locally available, or always available.</p>
                     </div>
                 </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/windows/complete.png"
+                        alt="OneDrive open in the file explorer.">
+                    <div class="card-body">
+                        <h4 class="card-title">Step Six</h4>
+                        <p class="card-text">You're all set. Your OneDrive files will appear in File Explorer in the
+                            OneDrive folder as <b>OneDrive - Lynden School District</b>. You now have a new white or
+                            blue cloud icon in your notification area, and your files have synced to your
+                            computer.</b></p>
+                        <a target="_blank"
+                            href="https://support.microsoft.com/en-us/office/sync-files-with-onedrive-in-windows-615391c4-2bd3-4aae-a42a-858262e42a49">If
+                            you need more help, visit this link <i class="fa fa-external-link" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
             <!-- Mac Steps -->
-            <div class="card-deck" id="mac" hidden>
+            <div class="card-deck steps hidden mac">
                 <div class="card">
                     <img class="card-img-top" src="holder.js/100x180/" alt="" hidden>
                     <div class="card-body">
@@ -285,17 +314,61 @@
                         <p class="card-text">If you don't have it already, install the <a
                                 href="https://go.microsoft.com/fwlink/?linkid=823060">OneDrive for Mac</a> app from
                             Microsoft.</p>
+                        <p class="text-muted text-sm">Important: If you are currently using the <b>OneDrive Mac Store
+                                app</b>, you must first uninstall it before installing the <b>sync app</b>.</p>
                     </div>
                 </div>
                 <div class="card">
-                    <img class="card-img-top" src="holder.js/100x180/" alt="" hidden>
+                    <img class="card-img-top" src="./img/mac/spotlightSearch.png" alt="Spotlight showing OneDrive">
                     <div class="card-body">
-                        <h4 class="card-title">Title</h4>
-                        <p class="card-text">Text</p>
+                        <h4 class="card-title">Step Two</h4>
+                        <p class="card-text">If it didn't open automatically, start OneDrive by pressing <b>Command</b>
+                            + <b>Space</b> to launch a Spotlight query and type OneDrive. This starts OneDrive Setup.
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/mac/launchScreen.png"
+                        alt="OneDrive login screen displayed at launch.">
+                    <div class="card-body">
+                        <h4 class="card-title">Step Three</h4>
+                        <p class="card-text">Once the app opens, enter your <a href="../../../faq/#loggingin">school
+                                account email and password.</a></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/mac/yourFolder.png"
+                        alt="OneDrive 'Your OneDrive Folder' screen.">
+                    <div class="card-body">
+                        <h4 class="card-title">Step Four</h4>
+                        <p class="card-text">After logging in, OneDrive will tell you where the folder will be placed on
+                            your computer.</p>
+                        <p class="text-sm text-muted">If you wish to change where it is located, this is the best time
+                            to do that.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/mac/readyOnDemand.png"
+                        alt="OneDrive 'Your OneDrive Folder' screen.">
+                    <div class="card-body">
+                        <h4 class="card-title">Step Five</h4>
+                        <p class="card-text">On the 'Sync Files from Your OneDrive' screen, you can choose the folders
+                            you want to sync to your computer, and click Next.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/mac/complete.png" alt="OneDrive open in the file explorer.">
+                    <div class="card-body">
+                        <h4 class="card-title">Step Six</h4>
+                        <p class="card-text">You're all set. Your OneDrive files will appear in File Explorer in the
+                            OneDrive folder as <b>OneDrive - Lynden School District</b>. You can find OneDrive up in
+                            your Menu bar. You’ll have a cloud icon for every account you’ve connected to OneDrive. </p>
+                        <a target="_blank"
+                            href="https://support.microsoft.com/en-us/office/sync-files-with-onedrive-on-mac-os-x-d11b9f29-00bb-4172-be39-997da46f913f">If
+                            you need more help, visit this link <i class="fa fa-external-link"
+                                aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
-
         </span>
         <!-- Guide 2 -->
 
@@ -330,8 +403,12 @@
             Rights Reserved.
         </p>
         <p class="nav-link p-1 m-1 text-muted">Developed by Jack Graddon</p>
-        <p class="nav-link p-1 m-1 text-muted">Provide feedback on the site <a target="_blank"
+        <p class="nav-link p-1 m-1 text-muted">Provide feedback on the site <a target="_blank" class="text-info"
                 href="https://github.com/jackgraddon/lyndenit/issues/new/choose">here.</a></p>
+        <!-- Detect Safari -->
+        <p class="safari-warning-search text-muted text-sm">
+            <i class="fa fa-eye-slash" aria-hidden="true"></i> Search has failed to load.
+        </p>
     </nav>
     <script type="text/javascript">
         var date = new Date();

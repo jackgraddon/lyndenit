@@ -18,7 +18,14 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/ico" href="images/lynden/lyndenFavicon.ico" />
     <!-- Google Site Search -->
-    <script async src="https://cse.google.com/cse.js?cx=f35faae7eae0e71ee"></script>
+    <script async onload="javascript:googleLoaded();" src="https://cse.google.com/cse.js?cx=f35faae7eae0e71ee"></script>
+    <script type="text/javascript">
+        function googleLoaded() {
+            $('#searchbar').removeClass("hidden");
+            $(".safari-warning-search").addClass("hidden");
+            console.log('Google search bar loaded!')
+        }
+    </script>
 </head>
 
 <body>
@@ -64,7 +71,7 @@
                         <div class="search">
                             <div class="gcse-searchbox-only"></div>
                         </div>
-                        <!-- Detect Safari (Search is working on Safari now) -->
+                        <!-- Detect Safari -->
                         <!-- <p class="safari-warning-search hidden">
                         Search doesn't work on <i class="fa fa-safari" aria-hidden="true"></i>
                     </p>
