@@ -193,7 +193,6 @@ html {
   height: 35px;
 }
 #menubar {
-  height: 96;
   display: flex;
   justify-content: center;
   align-items: center !important;
@@ -270,6 +269,12 @@ a.navbar-brand .navbar-brand-img {
 .safari-warning-search {
   margin-top: auto;
   margin-bottom: auto;
+}
+/* For Search Bar Positioning */
+.flex-fill {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 /* Jumbotron */
