@@ -68,9 +68,6 @@
                         <div class="gcse-searchbox-only"></div>
                     </div>
                     <!-- Detect Safari -->
-                    <!-- <p class="safari-warning-search hidden">
-                        Search doesn't work on <i class="fa fa-safari" aria-hidden="true"></i>
-                    </p>
                     <script type="application/javascript">
                         var ua = navigator.userAgent.toLowerCase();
                         if (ua.indexOf('safari') != -1) {
@@ -78,11 +75,11 @@
                                 console.log('Using a Chromium Base - Good to go!')
                             } else {
                                 console.log('Using Safari - Search may not work properly, hiding...');
-                                var warning = document.getElementById('safari-warning-search');
+                                $(".search").addClass("hidden");
                                 $(".safari-warning-search").removeClass("hidden");
                             }
                         }
-                    </script>-->
+                    </script>
                 </div>
             </span>
             <span class="flex-fill" id="spacer"></span>
@@ -119,7 +116,7 @@
                     <p class="lead">Learn how use OneDrive
                     </p>
                 </span>
-                <img src="../../../images/lynden/svg/lyndenIcon.svg" class="float-right" height="200px">
+                <img src="./img/icon.png" class="float-right" height="200px">
             </span>
         </div>
         <div class="mt-5">
@@ -161,6 +158,7 @@
         <script type="text/javascript">
             let visible = true;
             let os = 'windows';
+            let platform = 'web';
             function toggleImage() {
                 if (visible) {
                     $('.card-img-top').hide();
@@ -183,6 +181,19 @@
                     os = 'windows';
                 }
             }
+            function togglePlatform() {
+                if (platform == 'web') {
+                    document.getElementById('togglePlatform').innerText = 'Show Web Steps';
+                    $('.web').addClass('hidden');
+                    $('.mobile').removeClass('hidden');
+                    platform = 'mobile';
+                } else {
+                    document.getElementById('togglePlatform').innerText = 'Show Mobile Steps';
+                    $('.web').removeClass('hidden');
+                    $('.mobile').addClass('hidden');
+                    platform = 'windows';
+                }
+            }
         </script>
         <span id="personal" class="mt-5">
             <div class="jumbotron mt-5">
@@ -196,7 +207,6 @@
             <!-- Windows Steps -->
             <div class="card-deck steps windows">
                 <div class="card">
-                    <!-- <img class="card-img-top" src="holder.js/100x180/" alt="" hidden> -->
                     <div class="card-body">
                         <h4 class="card-title">Step One</h4>
                         <p class="card-text">If you don't have it already, install the <a
@@ -336,8 +346,7 @@
                 <p class="text-sm clickable pb-0 mt-2" onclick="toggleImage()">Toggle Image Visibility</p>
             </div>
 
-            <!-- Windows Steps -->
-            <div class="card-deck steps windows">
+            <div class="card-deck steps">
                 <div class="card">
                     <img class="card-img-top" src="./img/windows/startMenu.png" alt="Start Menu showing OneDrive">
                     <div class="card-body">
@@ -399,13 +408,15 @@
             <div class="jumbotron mt-5">
                 <h1>Accessing OneDrive On The Web (Or By App)</h1>
                 <p class="lead">Learn how to access Microsoft OneDrive on the web, on your phone.</p>
+                <button type="button" id="togglePlatform" class="btn btn-primary" onclick="togglePlatform()">Show Mobile
+                    Steps</button>
                 <p class="text-sm clickable pb-0 mt-2" onclick="toggleImage()">Toggle Image Visibility</p>
             </div>
 
-            <!-- Steps -->
-            <div class="card-deck steps windows">
+            <!-- Website Steps -->
+            <div class="card-deck steps web">
                 <div class="card">
-                    <img class="card-img-top" src="./img/browser.png" alt="Spotligt showing Safari">
+                    <img class="card-img-top" src="./img/web/browser.png" alt="Spotligt showing Safari">
                     <div class="card-body">
                         <h4 class="card-title">Step One</h4>
                         <p class="card-text">Open your primary choice of Internet Browser.</p>
@@ -421,7 +432,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img class="card-img-top" src="./img/webMain.png" alt="OneDrive Website.">
+                    <img class="card-img-top" src="./img/web/main.png" alt="OneDrive Website.">
                     <div class="card-body">
                         <h4 class="card-title">Step Two</h4>
                         <p class="card-text">Open <a target="_blank"
@@ -433,7 +444,72 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img class="card-img-top" src="./img/webSignIn.png" alt="OneDrive web sign in.">
+                    <img class="card-img-top" src="./img/web/signIn.png" alt="OneDrive web sign in.">
+                    <div class="card-body">
+                        <h4 class="card-title">Step Three</h4>
+                        <p class="card-text">Sign in with your <a href="../../../faq/#loggingin">school
+                                account email and password</a>.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/web/complete.png" alt="OneDrive website browser.">
+                    <div class="card-body">
+                        <h4 class="card-title">Step Four</h4>
+                        <p class="card-text">You're all set, and ready to go! Browse your files on demand whenever you
+                            need them.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Steps -->
+            <div class="card-deck steps mobile hidden">
+                <div class="card">
+                    <div id="mobileStepOneImage" class="card-img-top carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#mobileStepOneImage" data-slide-to="0" class="active"></li>
+                            <li data-target="#mobileStepOneImage" data-slide-to="1"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <img class="w-100" src="./img/mobile/appStore.jpg" alt="App Store">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="w-100" src="./img/mobile/search.jpg" alt="Searching in App Store">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#mobileStepOneImage" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#mobileStepOneImage" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Step One</h4>
+                        <p class="card-text">Open your devices app store, and search for 'OneDrive.'</p>
+                        <p class="text-sm text-muted">
+                            <i class="fa fa-google" aria-hidden="true"></i> Play Store<br>
+                            <i class="fa fa-apple" aria-hidden="true"></i> App Store
+                            <hr>
+                            This tutorial is displayed on an iPhone, but it will work on all smartphones.
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/mobile/download.jpg" alt="OneDrive Website.">
+                    <div class="card-body">
+                        <h4 class="card-title">Step Two</h4>
+                        <p class="card-text">Open <a target="_blank"
+                                href="https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage">this
+                                link</a> or search for 'OneDrive' on your selected search engine <span
+                                class="text-sm">(Google, Bing, Ecosia,
+                                etc)</span>. Click sign in on the OneDrive website.
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/mobile/signIn.jpg" alt="OneDrive web sign in.">
                     <div class="card-body">
                         <h4 class="card-title">Step Three</h4>
                         <p class="card-text">Sign in with your <a href="../../../faq/#loggingin">school
@@ -444,7 +520,8 @@
                     <img class="card-img-top" src="./img/webComplete.png" alt="OneDrive website browser.">
                     <div class="card-body">
                         <h4 class="card-title">Step Four</h4>
-                        <p class="card-text">You're all set, and ready to go! Browse your files on demand whenever you
+                        <p class="card-text">You're all set, and ready to go! Browse your files on demand whenever
+                            you
                             need them.</p>
                     </div>
                 </div>
@@ -482,7 +559,7 @@
         <p class="nav-link p-1 m-1 text-muted">Developed by Jack Graddon</p>
         <p class="nav-link p-1 m-1 text-muted">Provide feedback on the site <a target="_blank" class="text-info"
                 href="https://github.com/jackgraddon/lyndenit/issues/new/choose">here.</a></p>
-        <!-- Detect Safari -->
+        <!-- Search Failed Warning (Will hide on successful search load) -->
         <p class="safari-warning-search text-muted text-sm">
             <i class="fa fa-eye-slash" aria-hidden="true"></i> Search has failed to load.
         </p>

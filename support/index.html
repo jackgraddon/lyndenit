@@ -66,9 +66,6 @@
                         <div class="gcse-searchbox-only"></div>
                     </div>
                     <!-- Detect Safari -->
-                    <!-- <p class="safari-warning-search hidden">
-                        Search doesn't work on <i class="fa fa-safari" aria-hidden="true"></i>
-                    </p>
                     <script type="application/javascript">
                         var ua = navigator.userAgent.toLowerCase();
                         if (ua.indexOf('safari') != -1) {
@@ -76,11 +73,11 @@
                                 console.log('Using a Chromium Base - Good to go!')
                             } else {
                                 console.log('Using Safari - Search may not work properly, hiding...');
-                                var warning = document.getElementById('safari-warning-search');
+                                $(".search").addClass("hidden");
                                 $(".safari-warning-search").removeClass("hidden");
                             }
                         }
-                    </script>-->
+                    </script>
                 </div>
             </span>
             <span class="flex-fill" id="spacer"></span>
@@ -153,7 +150,7 @@
         <p class="nav-link p-1 m-1 text-muted">Developed by Jack Graddon</p>
         <p class="nav-link p-1 m-1 text-muted">Provide feedback on the site <a target="_blank" class="text-info"
                 href="https://github.com/jackgraddon/lyndenit/issues/new/choose">here.</a></p>
-        <!-- Detect Safari -->
+        <!-- Search Failed Warning (Will hide on successful search load) -->
         <p class="safari-warning-search text-muted text-sm">
             <i class="fa fa-eye-slash" aria-hidden="true"></i> Search has failed to load.
         </p>

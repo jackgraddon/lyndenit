@@ -72,21 +72,21 @@
                             <div class="gcse-searchbox-only"></div>
                         </div>
                         <!-- Detect Safari -->
-                        <!-- <p class="safari-warning-search hidden">
-                        Search doesn't work on <i class="fa fa-safari" aria-hidden="true"></i>
-                    </p>
-                    <script type="application/javascript">
-                        var ua = navigator.userAgent.toLowerCase();
-                        if (ua.indexOf('safari') != -1) {
-                            if (ua.indexOf('chrome') > -1) {
-                                console.log('Using a Chromium Base - Good to go!')
-                            } else {
-                                console.log('Using Safari - Search may not work properly, hiding...');
-                                var warning = document.getElementById('safari-warning-search');
-                                $(".safari-warning-search").removeClass("hidden");
+                        <p class="safari-warning-search hidden">
+                            Search doesn't work on <i class="fa fa-safari" aria-hidden="true"></i>
+                        </p>
+                        <script type="application/javascript">
+                            var ua = navigator.userAgent.toLowerCase();
+                            if (ua.indexOf('safari') != -1) {
+                                if (ua.indexOf('chrome') > -1) {
+                                    console.log('Using a Chromium Base - Good to go!')
+                                } else {
+                                    console.log('Using Safari - Search may not work properly, hiding...');
+                                    var warning = document.getElementById('safari-warning-search');
+                                    $(".safari-warning-search").removeClass("hidden");
+                                }
                             }
-                        }
-                    </script>-->
+                        </script>
                     </div>
                 </span>
                 <span class="flex-fill" id="spacer"></span>

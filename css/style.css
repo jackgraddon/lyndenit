@@ -190,7 +190,7 @@ html {
   }
 }
 .navbar-menu {
-  height: 100% !important;
+  height: 35px;
 }
 #menubar {
   height: 96;
@@ -360,6 +360,14 @@ a.navbar-brand .navbar-brand-img {
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.12) 0 3px 13px 1px;
 }
+/* .carousel-inner > .item {
+  position: relative;
+  display: none;
+  -webkit-transition: 0.1s ease-in-out left;
+  -moz-transition: 0.1s ease-in-out left;
+  -o-transition: 0.1s ease-in-out left;
+  transition: 0.1s ease-in-out left;
+} */
 
 /* Modal */
 .modal div,
