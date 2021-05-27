@@ -48,10 +48,10 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-sm sticky-top">
-        <div class="d-flex flex-row-reverse w-100 h-100 align-content-center">
+        <div class="d-flex flex-sm-row-reverse w-100 h-100 align-content-center">
             <span id="menubar">
                 <!-- Navigation Links -->
-                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <div class="navbar-menu">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item">
                             <a class="nav-link" href="../../../">Home</a>
@@ -91,11 +91,11 @@
                     <a class="navbar-brand" href="./">
                         <div class="navbar-brand-img"></div>
                     </a>
-                    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                    <!-- <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
                         data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
                         aria-label="Toggle navigation">
                         <i class="fa fa-bars" aria-hidden="true"></i>
-                    </button>
+                    </button> -->
                 </span>
             </span>
         </div>
@@ -104,7 +104,7 @@
         <ol class="breadcrumb m-0">
             <li class="breadcrumb-item"><a href="../../../">Home</a></li>
             <li class="breadcrumb-item"><a href="../../">Support</a></li>
-            <li class="breadcrumb-item"><a href="../">Issues</a></li>
+            <li class="breadcrumb-item"><a href="../">Learn</a></li>
             <li class="breadcrumb-item active" aria-current="OneDrive">OneDrive</li>
         </ol>
     </div>
@@ -118,61 +118,10 @@
                     <h1>OneDrive</h1>
                     <p class="lead">Learn how use OneDrive
                     </p>
-                    <!-- <span>
-                        <p>
-                            <i class="fa fa-check-circle-o" aria-hidden="true" id="completed" hidden></i>
-                            <i class="fa fa-times-circle-o" aria-hidden="true" id="notstarted"></i>
-                            <i class="fa fa-dot-circle-o" aria-hidden="true" id="working" hidden></i>
-                            <span id="status">You haven't started this yet.</span>
-                        </p>
-                    </span> -->
                 </span>
                 <img src="../../../images/lynden/svg/lyndenIcon.svg" class="float-right" height="200px">
             </span>
         </div>
-
-        <!-- Cookie Script -->
-        <!-- <script src="https://unpkg.com/packery@2.1/dist/packery.pkgd.min.js"></script> -->
-        <!-- <script type="text/javascript">
-            let allowed = Cookies.get("agreed");
-            if (allowed == true) {
-                function projectTracker(projectIn, status, other) {
-                    // let project = projectIn.toString();
-                    let project = "OneDrive";
-                    let projectStatus = Cookies.get(project);
-                    let jumbotronStatus = document.getElementById("status");
-                    let completedIcon = document.getElementById("completed");
-                    let workingIcon = document.getElementById("working");
-                    let notStartedIcon = document.getElementById("notStarted");
-                    if (!status) {
-                        if (!projectStatus) {
-                            Cookies.set(project, "started");
-                            jumbotronStatus.innerText = `You have started learning about ${project}! Your progress will be tracked and stored locally on your computer.`;
-                        } else if (projectStatus == "started") {
-                            Cookies.set(project, "learning");
-                            jumbotronStatus.innerText = `Welcome back! Just a reminder that your progress will be tracked and stored locally on your computer.`;
-                        } else if (projectStatus == "learning") {
-                            jumbotronStatus.innerText = `Welcome back! Let's finish up this lesson!`;
-                        } else if (projectStatus == "finished") {
-                            jumbotronStatus.innerText = `You have completed your lessons in ${project}! Nice work.`;
-                        }
-                    } else {
-                        Cookies.set(project, status);
-                        console.log(Cookies.get(project));
-                        if (projectStatus == "started") {
-                            Cookies.set(project, "learning");
-                            jumbotronStatus.innerText = `Welcome back! Just a reminder that your progress will be tracked and stored locally on your computer.`;
-                        } else if (projectStatus == "learning") {
-                            jumbotronStatus.innerText = `Welcome back! Let's finish up this lesson!`;
-                        } else if (projectStatus == "finished") {
-                            jumbotronStatus.innerText = `You have completed your lessons in ${project}! Nice work.`;
-                        }
-                    }
-                }
-            }
-            projectTracker('OneDrive');
-        </script> -->
-
         <div class="mt-5">
             <h1 class="mt-0">Learn the Basics of OneDrive</h1>
             <div class="card-deck">
@@ -197,7 +146,7 @@
                         <h4 class="card-title">Access OneDrive</h4>
                         <p class="card-text">How to access your OneDrive from any device either by web or by app so you
                             can access your files on the go.</p>
-                        <a class="btn btn-primary" href="onthego">Learn</a>
+                        <a class="btn btn-primary" href="#access">Learn</a>
                     </div>
                 </div>
             </div>
@@ -378,9 +327,129 @@
                 </div>
             </div>
         </span>
-        <!-- Guide 2 -->
 
-        <!-- Guide 3 -->
+        <!-- School Computer -->
+        <span id="school" class="mt-5">
+            <div class="jumbotron mt-5">
+                <h1>Syncing OneDrive with your School Computer</h1>
+                <p class="lead">Learn how to install and setup Microsoft OneDrive for your school assigned computer.</p>
+                <p class="text-sm clickable pb-0 mt-2" onclick="toggleImage()">Toggle Image Visibility</p>
+            </div>
+
+            <!-- Windows Steps -->
+            <div class="card-deck steps windows">
+                <div class="card">
+                    <img class="card-img-top" src="./img/windows/startMenu.png" alt="Start Menu showing OneDrive">
+                    <div class="card-body">
+                        <h4 class="card-title">Step One</h4>
+                        <p class="card-text">Open the <i class="fa fa-windows" aria-hidden="true"></i> Start Menu and
+                            search for <b>OneDrive</b>. Open the first app.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/windows/launchScreen.png"
+                        alt="OneDrive login screen displayed at launch.">
+                    <div class="card-body">
+                        <h4 class="card-title">Step Two</h4>
+                        <p class="card-text">Once the app opens, enter your <a href="../../../faq/#loggingin">school
+                                account email</a> and click <b>Sign In</b>.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/windows/yourFolder.png"
+                        alt="OneDrive 'Your OneDrive Folder' screen.">
+                    <div class="card-body">
+                        <h4 class="card-title">Step Three</h4>
+                        <p class="card-text">After logging in, OneDrive will tell you where the folder will be placed on
+                            your computer. Click <b>Next</b>.</p>
+                        <p class="text-sm text-muted">Do not change this folder location.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/windows/readyOnDemand.png"
+                        alt="OneDrive 'Your OneDrive Folder' screen.">
+                    <div class="card-body">
+                        <h4 class="card-title">Step Four</h4>
+                        <p class="card-text">On the 'Back up your folders' screen, you'll see which folders are backed
+                            up. Select all of the folders, and click <b>Continue</b>.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/windows/complete.png"
+                        alt="OneDrive open in the file explorer.">
+                    <div class="card-body">
+                        <h4 class="card-title">Step Five</h4>
+                        <p class="card-text">You're all set. Your OneDrive files will appear in File Explorer in the
+                            OneDrive folder as <b>OneDrive - Lynden School District</b>. You now have a new white or
+                            blue cloud icon in your notification area, and your files have synced to your
+                            computer.</b></p>
+                        <p class="text-sm text-muted">You will be walked through how to use OneDrive before the app
+                            closes. Choose <b>Later</b> when prompted to 'Get the mobile app.'</p>
+                        <a target="_blank"
+                            href="https://support.microsoft.com/en-us/office/sync-files-with-onedrive-in-windows-615391c4-2bd3-4aae-a42a-858262e42a49">If
+                            you need more help, visit this link <i class="fa fa-external-link" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </span>
+
+        <!-- Access Files On The Go -->
+        <span id="access" class="mt-5">
+            <div class="jumbotron mt-5">
+                <h1>Accessing OneDrive On The Web (Or By App)</h1>
+                <p class="lead">Learn how to access Microsoft OneDrive on the web, on your phone.</p>
+                <p class="text-sm clickable pb-0 mt-2" onclick="toggleImage()">Toggle Image Visibility</p>
+            </div>
+
+            <!-- Steps -->
+            <div class="card-deck steps windows">
+                <div class="card">
+                    <img class="card-img-top" src="./img/browser.png" alt="Spotligt showing Safari">
+                    <div class="card-body">
+                        <h4 class="card-title">Step One</h4>
+                        <p class="card-text">Open your primary choice of Internet Browser.</p>
+                        <p class="text-sm text-muted">
+                            <i class="fa fa-edge" aria-hidden="true" title="Microsoft Edge"></i>
+                            <i class="fa fa-chrome" aria-hidden="true" title="Google Chrome"></i>
+                            <i class="fa fa-safari" aria-hidden="true" title="Apple Safari"></i>
+                            <i class="fa fa-firefox" aria-hidden="true" title="Mozilla Firefox"></i>
+                            <i class="fa fa-opera" aria-hidden="true" title="Opera"></i>
+                            <hr>
+                            This tutorial is displayed on Safari, but it will work on all modern browsers.
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/webMain.png" alt="OneDrive Website.">
+                    <div class="card-body">
+                        <h4 class="card-title">Step Two</h4>
+                        <p class="card-text">Open <a target="_blank"
+                                href="https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage">this
+                                link</a> or search for 'OneDrive' on your selected search engine <span
+                                class="text-sm">(Google, Bing, Ecosia,
+                                etc)</span>. Click sign in on the OneDrive website.
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/webSignIn.png" alt="OneDrive web sign in.">
+                    <div class="card-body">
+                        <h4 class="card-title">Step Three</h4>
+                        <p class="card-text">Sign in with your <a href="../../../faq/#loggingin">school
+                                account email and password</a>.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/webComplete.png" alt="OneDrive website browser.">
+                    <div class="card-body">
+                        <h4 class="card-title">Step Four</h4>
+                        <p class="card-text">You're all set, and ready to go! Browse your files on demand whenever you
+                            need them.</p>
+                    </div>
+                </div>
+            </div>
+        </span>
 
         <!-- Completed Form -->
         <!-- <script>
