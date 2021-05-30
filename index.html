@@ -86,7 +86,7 @@
         <div class="d-flex flex-sm-row-reverse w-100 h-100 align-content-center">
             <span id="menubar">
                 <!-- Navigation Links -->
-                <div class="collapse navbar-collapse">
+                <div class="">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item active">
                             <a class="nav-link" href="./">Home<span class="sr-only">(current)</span></a>
@@ -171,13 +171,37 @@
                 <div class="card-body">
                     <h4 class="card-title">Submit a Support Ticket</h4>
                     <p class="card-text">You can submit a support ticket through our form with the button below.</p>
-                    <a class="btn btn-primary"
-                        href="https://forms.office.com/Pages/ResponsePage.aspx?id=28PyA8JlyEewn-mSHEhFOYUhQCx9sN5OqDl2usramJpUMkZBWlZOQVA2QUFISUdHOFVTT0FGUVBETS4u"
-                        target="_blank">Open the Form</a>
+                    <a class="btn btn-primary" href="#"
+                        onClick="formWindow=window.open('https://forms.office.com/Pages/ResponsePage.aspx?id=28PyA8JlyEewn-mSHEhFOazylAF7DSpAvgBU1mhaHBlUNDhJSzMzTDA3RVRXQllRNVlPR0NWTlRCNC4u','formWindow','width=840,height=480'); return false;">Open
+                        the Form</a>
+                    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formModal">
+                        Open the Form
+                    </button> -->
                 </div>
             </div>
         </div>
     </main>
+
+    <!-- Form Modal -->
+    <div class="modal" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="formModalTitle">Submit a Tech Support Ticket</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <iframe <iframe width="640px" height="480px"
+                        src="https://forms.office.com/Pages/ResponsePage.aspx?id=28PyA8JlyEewn-mSHEhFOazylAF7DSpAvgBU1mhaHBlUNDhJSzMzTDA3RVRXQllRNVlPR0NWTlRCNC4u"
+                        frameborder="0" marginwidth="0" marginheight="0"
+                        style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen
+                        mozallowfullscreen msallowfullscreen> </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <nav class="nav justify-content-center align-items-center p-3 mt-5 flex-column">
         <p class="nav-link p-1 m-1 text-muted">Website &copy;Lynden High School <span id="dateYear"></span>. All

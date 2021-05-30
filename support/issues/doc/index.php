@@ -341,7 +341,7 @@ a.navbar-brand .navbar-brand-img {
 
 /* Jumbotron */
 @media (prefers-color-scheme: light) {
-  .jumbotron, #idx {
+  .jumbotron {
     background-color: var(--light) !important;
     border-radius: 15px;
 
@@ -352,7 +352,7 @@ a.navbar-brand .navbar-brand-img {
 }
 
 @media (prefers-color-scheme: dark) {
-  .jumbotron, #idx {
+  .jumbotron {
     background-color: var(--dark) !important;
     border-radius: 15px;
 
@@ -361,10 +361,13 @@ a.navbar-brand .navbar-brand-img {
     -moz-box-shadow: 10px 10px 99px -20px rgba(15, 15, 15, 0.7);
   }
 }
+.jumbotron {
+	height: fit-content !important;
+}
 
 /* Card */
 @media (prefers-color-scheme: light) {
-  .card{
+  .card, #idx{
     background-color: var(--light) !important;
 
     box-shadow: 10px 10px 99px -20px rgba(128, 128, 128, 0.7);
@@ -374,7 +377,7 @@ a.navbar-brand .navbar-brand-img {
 }
 
 @media (prefers-color-scheme: dark) {
-  .card{
+  .card, #idx{
     background-color: var(--dark) !important;
 
     box-shadow: 10px 10px 99px -20px rgba(15, 15, 15, 0.7);
@@ -618,57 +621,6 @@ window.onload=function()
         crossorigin="anonymous"></script>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-sm sticky-top">
-        <div class="d-flex flex-sm-row-reverse w-100 h-100 align-content-center">
-            <span id="menubar">
-                <!-- Navigation Links -->
-                <div class="collapse navbar-collapse">
-                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="../../../">Home<span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../../../support/">Support</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../../../faq/">FAQ</a>
-                        </li>
-                    </ul>
-                </div>
-            </span>
-            <span class="flex-fill" id="spacer">
-                <!-- Search Bar -->
-                <div class="search float-right pr-3">
-                    <div class="gcse-searchbox-only"></div>
-                </div>
-                <!-- Detect Safari -->
-                <script type="application/javascript">
-                    var ua = navigator.userAgent.toLowerCase();
-                    if (ua.indexOf('safari') != -1) {
-                        if (ua.indexOf('chrome') > -1) {
-                            console.log('Using a Chromium Base - Good to go!')
-                        } else {
-                            console.log('Using Safari - Search may not work properly, hiding...');
-                            $(".search").addClass("hidden");
-                            $(".safari-warning-search").removeClass("hidden");
-                        }
-                    }
-                </script>
-            </span>
-            <span class="float-left" id="brand">
-                <span class="flex-row justify-content-center alight-items-center w-100 h-100">
-                    <a class="navbar-brand" href="./">
-                        <div class="navbar-brand-img"></div>
-                    </a>
-                    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
-                        data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <i class="fa fa-bars" aria-hidden="true"></i>
-                    </button>
-                </span>
-            </span>
-        </div>
-    </nav>
     <div aria-label="breadcrumb">
         <ol class="breadcrumb m-0">
             <li class="breadcrumb-item"><a href="../../../">Home</a></li>
@@ -684,15 +636,10 @@ window.onload=function()
             <span class="d-flex" style="align-items: center;">
                 <span class="w-100">
                     <h1>Documentation</h1>
-                    <p class="lead">Read all available documentation on issues solved</p>
+					<div id="idx"><!-- do not remove --></div>
                 </span>
-                <img src="../../../images/lynden/svg/lyndenIcon.svg" class="float-right" height="200px">
             </span>
         </div>
-        <div class="mt-5">
-            <h1>All LHS Tech Support Docs</h1>
-	<div id="idx"><!-- do not remove --></div>
-	</div>
     </main>
 
     <nav class="nav justify-content-center align-items-center p-3 mt-5 flex-column">

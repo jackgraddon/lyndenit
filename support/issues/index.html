@@ -52,39 +52,39 @@
                 <div class="collapse navbar-collapse">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="../../">Home</a>
+                            <a class="nav-link" href="../">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="../support/">Support<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../../support/">Support</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../../faq/">FAQ</a>
+                            <a class="nav-link" href="../faq/">FAQ</a>
                         </li>
                     </ul>
-                    <!-- Search Bar -->
-                    <div class="search">
-                        <div class="gcse-searchbox-only"></div>
-                    </div>
-                    <!-- Detect Safari -->
-                    <script type="application/javascript">
-                        var ua = navigator.userAgent.toLowerCase();
-                        if (ua.indexOf('safari') != -1) {
-                            if (ua.indexOf('chrome') > -1) {
-                                console.log('Using a Chromium Base - Good to go!')
-                            } else {
-                                console.log('Using Safari - Search may not work properly, hiding...');
-                                $(".search").addClass("hidden");
-                                $(".safari-warning-search").removeClass("hidden");
-                            }
-                        }
-                    </script>
                 </div>
             </span>
             <span class="flex-fill" id="spacer">
+                <!-- Search Bar -->
+                <div class="search float-right pr-3">
+                    <div class="gcse-searchbox-only"></div>
+                </div>
+                <!-- Detect Safari -->
+                <script type="application/javascript">
+                    var ua = navigator.userAgent.toLowerCase();
+                    if (ua.indexOf('safari') != -1) {
+                        if (ua.indexOf('chrome') > -1) {
+                            console.log('Using a Chromium Base - Good to go!')
+                        } else {
+                            console.log('Using Safari - Search may not work properly, hiding...');
+                            $(".search").addClass("hidden");
+                            $(".safari-warning-search").removeClass("hidden");
+                        }
+                    }
+                </script>
             </span>
             <span class="float-left" id="brand">
                 <span class="flex-row justify-content-center alight-items-center w-100 h-100">
-                    <a class="navbar-brand" href="./">
+                    <a class="navbar-brand" href="../../">
                         <div class="navbar-brand-img"></div>
                     </a>
                     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
