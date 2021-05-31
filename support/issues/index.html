@@ -1,29 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <head>
     <title>Lynden IT | Support</title>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/e80db28d62.js" crossorigin="anonymous"></script>
     <!-- Personal CSS -->
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/style.css" />
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/ico" href="../../images/lynden/lyndenFavicon.ico" />
     <!-- Google Site Search -->
     <script async onload="javascript:googleLoaded();" src="https://cse.google.com/cse.js?cx=f35faae7eae0e71ee"></script>
     <script type="text/javascript">
         function googleLoaded() {
-            $('#searchbar').removeClass("hidden");
+            $("#searchbar").removeClass("hidden");
             $(".safari-warning-search").addClass("hidden");
-            console.log('Google search bar loaded!')
+            console.log("Google search bar loaded!");
         }
     </script>
     <!-- jsCookie (for tracking progression in Tech Tutorials) -->
@@ -71,11 +71,13 @@
                 <!-- Detect Safari -->
                 <script type="application/javascript">
                     var ua = navigator.userAgent.toLowerCase();
-                    if (ua.indexOf('safari') != -1) {
-                        if (ua.indexOf('chrome') > -1) {
-                            console.log('Using a Chromium Base - Good to go!')
+                    if (ua.indexOf("safari") != -1) {
+                        if (ua.indexOf("chrome") > -1) {
+                            console.log("Using a Chromium Base - Good to go!");
                         } else {
-                            console.log('Using Safari - Search may not work properly, hiding...');
+                            console.log(
+                                "Using Safari - Search may not work properly, hiding..."
+                            );
                             $(".search").addClass("hidden");
                             $(".safari-warning-search").removeClass("hidden");
                         }
@@ -83,7 +85,13 @@
                 </script>
             </span>
             <span class="float-left" id="brand">
-                <span class="flex-row justify-content-center alight-items-center w-100 h-100">
+                <span class="
+              flex-row
+              justify-content-center
+              alight-items-center
+              w-100
+              h-100
+            ">
                     <a class="navbar-brand" href="../../">
                         <div class="navbar-brand-img"></div>
                     </a>
@@ -105,62 +113,24 @@
     </div>
 
     <!-- Content -->
-    <main class="container">
-        <div class="jumbotron mt-5" style="height: 340px;">
-            <span class="d-flex" style="align-items: center;">
-                <span class="w-100">
-                    <h1>Issues</h1>
-                    <p class="lead">Find your issue and learn how to fix it</p>
-                </span>
-                <img src="../../images/lynden/svg/lyndenIcon.svg" class="float-right" height="200px">
-            </span>
-        </div>
+    <iframe src="./doc/index.php" id="docs" frameborder="0" width="100%" style="margin-bottom: -10px;"></iframe>
+    <script>
+        let iframe = document.querySelector("#docs");
+        let container = document.querySelector("#container");
 
-        <div class="mt-5">
-            <h1>Recent Reports:</h1>
-            <!-- Use recent reports to fill this area. -->
-            <div class="card-deck">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Add</h4>
-                        <p class="card-text">Add recent reports.</p>
-                        <a class="btn btn-primary disabled" href="../issues/">Read</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Recent</h4>
-                        <p class="card-text">Add recent reports.</p>
-                        <a class="btn btn-primary disabled" href="../learn/">Read</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Reports</h4>
-                        <p class="card-text">Add recent reports.</p>
-                        <a class="btn btn-primary disabled" href="../" target="_blank">Read</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="mt-3">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">View All Docs</h4>
-                    <p class="card-text">If you want to view all of our docs, click on the button below.</p>
-                    <a class="btn btn-primary" href="./doc/">Open All Docs</a>
-                </div>
-            </div>
-        </div>
-    </main>
+        iframe.addEventListener("load", function () {
+            iframe.height = iframe.contentDocument.body.scrollHeight * 1.2 + 'px';
+        });
+    </script>
 
-    <nav class="nav justify-content-center align-items-center p-3 mt-5 flex-column">
+    <nav class="nav justify-content-center align-items-center p-3 m-0 flex-column">
         <p class="nav-link p-1 m-1 text-muted">Website &copy;Lynden High School <span id="dateYear"></span>. All
             Rights Reserved.
         </p>
         <p class="nav-link p-1 m-1 text-muted">Developed by Jack Graddon</p>
-        <p class="nav-link p-1 m-1 text-muted">Provide feedback on the site <a target="_blank" class="text-info"
-                href="https://github.com/jackgraddon/lyndenit/issues/new/choose">here.</a></p>
+        <p class="nav-link p-1 m-1 text-muted">Provide feedback on the site <a target="_blank" class="link"
+                title="Requires a GitHub account." href="https://github.com/jackgraddon/lyndenit/issues/new/choose">here
+                <i class="fa fa-external-link" aria-hidden="true"></i></a>.</p>
         <!-- Search Failed Warning (Will hide on successful search load) -->
         <p class="safari-warning-search text-muted text-sm">
             <i class="fa fa-eye-slash" aria-hidden="true"></i> Search has failed to load.

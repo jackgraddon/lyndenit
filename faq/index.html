@@ -111,8 +111,18 @@
                     <span class=" w-100">
                         <h1>Frequently Asked Questions</h1>
                         <p class="lead">See if your problem is common, and find ways to quickly solve it!</p>
-                        <p class="text-sm">To quickly find something on this page, press <b>Control</b> and <b>F</b> at
-                            the same time, and type your issue.</p>
+                        <p class="text-sm">To quickly find something on this page, press <b id="modifierFind"
+                                onload="javascript:getModifier()">Shift/Command</b> and <b>F</b> at the same time, and
+                            type your issue.</p>
+                        <script>
+                            var mac = /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform);
+                            console.log(mac);
+                            if (mac) {
+                                document.getElementById('modifierFind').innerHTML = 'Command';
+                            } else {
+                                document.getElementById('modifierFind').innerHTML = 'Control';
+                            }
+                        </script>
                     </span>
                     <img src="../images/lynden/svg/lyndenIcon.svg" class="float-right" height="200px">
                 </span>
@@ -352,8 +362,9 @@
             Rights Reserved.
         </p>
         <p class="nav-link p-1 m-1 text-muted">Developed by Jack Graddon</p>
-        <p class="nav-link p-1 m-1 text-muted">Provide feedback on the site <a target="_blank" class="text-info"
-                href="https://github.com/jackgraddon/lyndenit/issues/new/choose">here.</a></p>
+        <p class="nav-link p-1 m-1 text-muted">Provide feedback on the site <a target="_blank" class="link"
+                title="Requires a GitHub account." href="https://github.com/jackgraddon/lyndenit/issues/new/choose">here
+                <i class="fa fa-external-link" aria-hidden="true"></i></a>.</p>
         <!-- Search Failed Warning (Will hide on successful search load) -->
         <p class="safari-warning-search text-muted text-sm">
             <i class="fa fa-eye-slash" aria-hidden="true"></i> Search has failed to load.

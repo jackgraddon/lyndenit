@@ -425,8 +425,14 @@ a.navbar-brand .navbar-brand-img {
 a {
   color: var(--primary);
 }
+.link {
+  color: var(--primary) !important;
+}
 a:hover {
   color: var(--primary-hover);
+}
+.link:hover {
+  color: var(--primary-hover) !important;
 }
 p.clickable:hover {
   text-decoration: underline !important;
