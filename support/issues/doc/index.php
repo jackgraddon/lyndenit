@@ -1,5 +1,4 @@
 <?php
-// This block MUST be at the very top of the page!
 @ob_start('ob_gzhandler');
 if (isset($_GET['icon'])) {
   $e = $_GET['icon'];
@@ -24,7 +23,7 @@ if (isset($_GET['icon'])) {
 $self = basename(isset($_SERVER['SCRIPT_FILENAME']) ? $_SERVER['SCRIPT_FILENAME'] : __FILE__);
 $sitename = 'Click to open PDF';
 $date = 'M d, Y'; // date format
-$ignore = array('.', '..', '.htaccess', 'index.php', 'icon.php', 'Thumbs.db', '.DS_Store', $self); // ignore these files
+$ignore = array('.', '..', '.htaccess', '.pages', 'index.php', 'icon.php', 'Thumbs.db', '.DS_Store', $self); // ignore these files
 // End configs
 $root = dirname(__FILE__);
 $dir = isset($_GET['dir']) ? $_GET['dir'] : '';
@@ -793,8 +792,9 @@ $up_url = ($up_dir != '' && $up_dir != '.') ? $self . '?dir=' . rawurlencode($up
       for (var i = a; i < b && i < (_files.length + _dirs.length); ++i) {
         var f = _cnt[i];
         var rc = j++ & 1 ? _c1 : _c2;
-        html += '<tr style="background-color:' + rc + '"><td><img src="' + f['icon'] + '" alt="" /> &nbsp;<a class="btn btn-primary" href="' + f['url'] + '">' + f['name'] + '</a></td><td class="center" style="width:60px;">' + (f['dir'] ? '' : _s(f['size'])) + '</td><td class="center" style="width:200px;"> <span style="float: right !important">' + f['date'] + '</span> </td></tr>';
+        html += '<tr style="background-color:var(--light);"><td><img src="' + f['icon'] + '" alt="" /> &nbsp;<a class="btn btn-primary" target="_blank" href="' + f['url'] + '">' + f['name'] + '</a></td><td class="center" style="width:200px;"> <span style="float: right !important">' + f['date'] + '</span> </td></tr>';
       }
+      // <td class="center" style="width:60px;">' + (f['dir'] ? '' : _s(f['size'])) + '</td>
       tbl.innerHTML = html + '</table>';
     }
     <?php foreach ($dirs as $d) {
@@ -820,7 +820,7 @@ $up_url = ($up_dir != '' && $up_dir != '.') ? $self . '?dir=' . rawurlencode($up
 
   <!-- Content -->
   <main class="container">
-    <div class="jumbotron mt-5">
+    <div class="jumbotron mt-5" style="min-width:320px; width: 60%; margin-left:auto; margin-right:auto;">
       <span class="d-flex" style="align-items: center;">
         <span class="w-100">
           <h1>Documentation</h1>
