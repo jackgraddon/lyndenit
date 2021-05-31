@@ -1,4 +1,5 @@
 <?php
+define('loaded', true);
 @ob_start('ob_gzhandler');
 if (isset($_GET['icon'])) {
   $e = $_GET['icon'];

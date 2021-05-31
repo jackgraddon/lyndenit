@@ -114,13 +114,31 @@
 
     <!-- Content -->
     <iframe src="./doc/index.php" id="docs" frameborder="0" width="100%" style="margin-bottom: -10px;"></iframe>
+    <div class="jumbotron mt-5 hidden" style="min-width:320px; width: 60%; margin-left:auto; margin-right:auto;"
+        id="error">
+        <span class="d-flex" style="align-items: center;">
+            <span class="w-100">
+                <h1>Documentation</h1>
+                <p class="lead">Documentation failed to load.</p>
+                <p class="text-muted">Please come back later.</p>
+            </span>
+        </span>
+    </div>
     <script>
         let iframe = document.querySelector("#docs");
-        let container = document.querySelector("#container");
-
         iframe.addEventListener("load", function () {
             iframe.height = iframe.contentDocument.body.scrollHeight * 1.2 + 'px';
         });
+
+        let error = document.querySelector('#error');
+        let container = document.querySelector("#container");
+
+        if (loaded != true) {
+            iframe.addClass('hidden');
+            error.removeClass('hidden');
+        } else {
+            console.log('iframe loaded');
+        }
     </script>
 
     <nav class="nav justify-content-center align-items-center p-3 m-0 flex-column">
