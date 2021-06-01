@@ -30,20 +30,13 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script> -->
     <!-- Packery.js -->
     <script src="https://unpkg.com/packery@2.1/dist/packery.pkgd.min.js"></script>
+
+    <!-- Table Sorting (This page only) -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
 </head>
 
 <body>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-
     <!-- Navigation -->
     <nav class="navbar navbar-expand-sm sticky-top">
         <div class="d-flex flex-sm-row-reverse w-100 h-100 align-content-center">
@@ -86,12 +79,7 @@
             </span>
             <span class="float-left" id="brand">
                 <span class="
-              flex-row
-              justify-content-center
-              alight-items-center
-              w-100
-              h-100
-            ">
+              flex-row justify-content-center alight-items-center w-100 h-100 ">
                     <a class="navbar-brand" href="../../">
                         <div class="navbar-brand-img"></div>
                     </a>
@@ -111,34 +99,62 @@
             <li class="breadcrumb-item active" aria-current="Issues">Issues</li>
         </ol>
     </div>
-
-    <!-- Content -->
-    <iframe src="./doc/index.php" id="docs" frameborder="0" width="100%" style="margin-bottom: -10px;"></iframe>
-    <div class="jumbotron mt-5 hidden" style="min-width:320px; width: 60%; margin-left:auto; margin-right:auto;"
-        id="error">
-        <span class="d-flex" style="align-items: center;">
-            <span class="w-100">
-                <h1>Documentation</h1>
-                <p class="lead">Documentation failed to load.</p>
-                <p class="text-muted">Please come back later.</p>
-            </span>
-        </span>
-    </div>
+    <main class="container">
+        <div class="jumbotron mt-5">
+            <table class="table table-hover" style="border-radius: 15px !important;" id="tickets">
+                <thead class="thead-color">
+                    <tr>
+                        <th colspan="2" style="border-top-left-radius: 15px;">
+                            <h2>Documenation</h2>
+                        </th>
+                        <th colspan="1" class="p-0" style=" border-top-right-radius: 15px;">
+                            <p>File last modified on</p>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    include('./get.php');
+                    ?>
+                </tbody>
+                <tfoot class="thead-color">
+                    <tr>
+                        <th colspan="1" style="border-bottom-left-radius: 15px;"></th>
+                        <th colspan="1" class="p-0">
+                            <p>File Name</p>
+                        </th>
+                        <th colspan="1" class="p-0" style=" border-bottom-right-radius: 15px;">
+                            <p>File last modified on</p>
+                        </th>
+                    </tr>
+                </tfoot>
+            </table>
+            <script src="./results.json"></script>
+        </div>
+    </main>
+    <!-- Table Sorting (this page only) -->
+    <script src="https:///cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <script>
-        let iframe = document.querySelector("#docs");
-        iframe.addEventListener("load", function () {
-            iframe.height = iframe.contentDocument.body.scrollHeight * 1.2 + 'px';
+        // const tabledata = require('./results.json');
+        $(document).ready(function () {
+
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', './results.json');
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    alert('User\'s name is ' + xhr.responseText);
+                }
+                else {
+                    alert('Request failed.  Returned status of ' + xhr.status);
+                }
+            };
+            xhr.send();
+
+            $('#tickets').DataTable({
+                data: xhr.data
+            });
         });
-
-        let error = document.querySelector('#error');
-        let container = document.querySelector("#container");
-
-        if (loaded != true) {
-            iframe.addClass('hidden');
-            error.removeClass('hidden');
-        } else {
-            console.log('iframe loaded');
-        }
     </script>
 
     <nav class="nav justify-content-center align-items-center p-3 m-0 flex-column">
@@ -159,6 +175,26 @@
         var year = date.getFullYear();
         document.getElementById('dateYear').innerText = year;
     </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

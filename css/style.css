@@ -421,6 +421,14 @@ a.navbar-brand .navbar-brand-img {
   border-color: var(--secondary) !important;
 }
 
+.paginate_button.current {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+.paginate_button {
+  background-color: var(--light) !important;
+}
+
 /* Links */
 a {
   color: var(--primary);
@@ -456,6 +464,21 @@ p.clickable:hover {
 }
 .fullsidebar div.sidebar {
   flex: 1;
+}
+
+/* Tables */
+
+.table,
+.table * {
+  border: none !important;
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+.table-hover tbody tr {
+  color: var(--primary);
+  cursor: pointer;
+}
+.table-hover tbody tr:hover {
+  color: var(--primary-hover);
 }
 
 /* List Items */
