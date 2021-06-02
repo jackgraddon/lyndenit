@@ -52,6 +52,12 @@ html {
 .clickable {
   cursor: pointer;
 }
+.clickable:hover {
+  text-decoration: underline !important;
+}
+tr.clickable:hover p {
+  color: var(--primary-hover);
+}
 @media (prefers-color-scheme: light) {
   .list-group-item.clickable:hover {
     background-color: var(--light-hover) !important;
@@ -468,17 +474,34 @@ p.clickable:hover {
 
 /* Tables */
 
-.table,
-.table * {
-  border: none !important;
-  background-color: rgba(0, 0, 0, 0) !important;
-}
 .table-hover tbody tr {
   color: var(--primary);
   cursor: pointer;
 }
 .table-hover tbody tr:hover {
   color: var(--primary-hover);
+}
+tbody td {
+  color: var(--primary);
+}
+@media (prefers-color-scheme: light) {
+  .table,
+  .table * {
+    border-color: var(--light-hover) !important;
+  }
+  td {
+    color: black;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .table,
+  .table * {
+    border-color: var(--dark-hover) !important;
+  }
+  thead td {
+    color: white;
+  }
 }
 
 /* List Items */

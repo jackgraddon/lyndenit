@@ -1,4 +1,5 @@
 <?php
+// This block MUST be at the very top of the page!
 @ob_start('ob_gzhandler');
 if (isset($_GET['icon'])) {
   $e = $_GET['icon'];
@@ -23,7 +24,7 @@ if (isset($_GET['icon'])) {
 $self = basename(isset($_SERVER['SCRIPT_FILENAME']) ? $_SERVER['SCRIPT_FILENAME'] : __FILE__);
 $sitename = 'Click to open PDF';
 $date = 'M d, Y'; // date format
-$ignore = array('.', '..', '.htaccess', '.pages', 'index.php', 'icon.php', 'Thumbs.db', '.DS_Store', $self); // ignore these files
+$ignore = array('.', '..', '.htaccess', 'index.php', 'icon.php', 'Thumbs.db', '.DS_Store', $self); // ignore these files
 // End configs
 $root = dirname(__FILE__);
 $dir = isset($_GET['dir']) ? $_GET['dir'] : '';
@@ -465,6 +466,15 @@ $up_url = ($up_dir != '' && $up_dir != '.') ? $self . '?dir=' . rawurlencode($up
       box-shadow: rgba(0, 0, 0, 0.12) 0 3px 13px 1px;
     }
 
+    /* .carousel-inner > .item {
+  position: relative;
+  display: none;
+  -webkit-transition: 0.1s ease-in-out left;
+  -moz-transition: 0.1s ease-in-out left;
+  -o-transition: 0.1s ease-in-out left;
+  transition: 0.1s ease-in-out left;
+} */
+
     /* Modal */
     .modal div,
     .modal h5 {
@@ -580,6 +590,7 @@ $up_url = ($up_dir != '' && $up_dir != '.') ? $self . '?dir=' . rawurlencode($up
       color: #606060;
       width: 100%;
       margin-top: 3px;
+      border: none !important;
     }
 
     #idx span.link {
@@ -589,8 +600,8 @@ $up_url = ($up_dir != '' && $up_dir != '.') ? $self . '?dir=' . rawurlencode($up
 
     #idx .rounded {
       padding: 10px 7px 10px 10px;
-      border-radius: 6px;
-      -moz-border-radius: 6px;
+      border-radius: 15px;
+      -moz-border-radius: 15px;
     }
 
     #idx .gray {
@@ -620,17 +631,29 @@ $up_url = ($up_dir != '' && $up_dir != '.') ? $self . '?dir=' . rawurlencode($up
     }
 
     #idx strong {
+      font-family: "Trebuchet MS", tahoma, arial;
       font-size: 1.2em;
       font-weight: bold;
       color: #202020;
       padding-bottom: 3px;
       margin: 0px;
     }
-
-    .dropdown-item {
-      cursor: pointer !important;
-    }
   </style>
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/ico" href="../../../images/lynden/lyndenFavicon.ico" />
+  <!-- Google Site Search -->
+  <script async onload="javascript:googleLoaded();" src="https://cse.google.com/cse.js?cx=f35faae7eae0e71ee"></script>
+  <script type="text/javascript">
+    function googleLoaded() {
+      $('#searchbar').removeClass("hidden");
+      $(".safari-warning-search").addClass("hidden");
+      console.log('Google search bar loaded!')
+    }
+  </script>
+  <!-- jsCookie (for tracking progression in Tech Tutorials) -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script> -->
+  <!-- Packery.js -->
+  <script src="https://unpkg.com/packery@2.1/dist/packery.pkgd.min.js"></script>
   <script type="text/javascript">
     var _c1 = '#fefefe';
     var _c2 = '#fafafa';
@@ -674,14 +697,16 @@ $up_url = ($up_dir != '' && $up_dir != '.') ? $self . '?dir=' . rawurlencode($up
       return _nf(v, 1) + '&nbsp;' + u;
     }
 
-    function _f(name, size, date, url, rdate) {
+    function _f(nameIn, size, date, url, rdate) {
+      let name = nameIn.split('.')[0];
+      name = name.replace('-', ' ');
       _files[_files.length] = {
         'dir': 0,
         'name': name,
         'size': size,
         'date': date,
         'type': _ge(name),
-        'url': url,
+        'url': `./doc/${url}`,
         'rdate': rdate,
         'icon': '<?php print $self ?>?icon=' + _ge(name)
       };
@@ -750,10 +775,10 @@ $up_url = ($up_dir != '' && $up_dir != '.') ? $self . '?dir=' . rawurlencode($up
           break;
       }
       _sdir[c] = !_sdir[c];
-      _obj('sort_type').style.color = (c == 'type' ? 'var(--primary)' : 'var(--dark-gray)');
-      _obj('sort_name').style.color = (c == 'name' ? 'var(--primary)' : 'var(--dark-gray)');
-      _obj('sort_size').style.color = (c == 'size' ? 'var(--primary)' : 'var(--dark-gray)');
-      _obj('sort_date').style.color = (c == 'date' ? 'var(--primary)' : 'var(--dark-gray)');
+      _obj('sort_type').style.fontStyle = (c == 'type' ? 'italic' : 'normal');
+      _obj('sort_name').style.fontStyle = (c == 'name' ? 'italic' : 'normal');
+      _obj('sort_size').style.fontStyle = (c == 'size' ? 'italic' : 'normal');
+      _obj('sort_date').style.fontStyle = (c == 'date' ? 'italic' : 'normal');
       _tbl();
       return false;
     }
@@ -761,15 +786,25 @@ $up_url = ($up_dir != '' && $up_dir != '.') ? $self . '?dir=' . rawurlencode($up
     function _head() {
       if (!idx) return;
       _tpg = Math.ceil((_files.length + _dirs.length) / _ppg);
-      idx.innerHTML = '<div class="rounded gray" style="padding:5px 10px 5px 7px;color:#202020">' +
+      idx.innerHTML = '<div class="rounded">' +
         '<p class="left">' +
         '<strong><?php print $current_dir_name == '' ? $sitename : $current_dir_name ?></strong><?php print $dir != '' ? '&nbsp; (<a href="' . $up_url . '">Back</a>)' : '' ?><br />' + (_files.length + _dirs.length) + ' objects in this folder, ' + _s(_tsize) + ' total.' +
         '</p>' +
         '<p class="right">' +
-        '<div class="dropdown float-right"> <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">Sort by</button> <div class="dropdown-menu" aria-labelledby="dropdownMenu1"> <span class="dropdown-item" onmousedown="return _srt(\'name\');" id="sort_name">Name</span> <span class="dropdown-item" onmousedown="return _srt(\'type\');" id="sort_type">Type</span> <span class="dropdown-item" onmousedown="return _srt(\'size\');" id="sort_size">Size</span> <span class="dropdown-item" onmousedown="return _srt(\'date\');" id="sort_date">Date</span> </div> </div>' +
-        '</p>' +
-        '<div style="clear:both;"></div>' +
-        '</div><div id="idx_tbl"></div>';
+        '<div class="dropdown">' +
+        '<button class="btn btn-secondary dropdown-toggle"' +
+        'type="button" id="dropdownMenu1" data-toggle="dropdown"' +
+        'aria-haspopup="true" aria-expanded="false">' +
+        'Dropdown' +
+        '</button>' +
+        '<div class="dropdown-menu" aria-labelledby="dropdownMenu1">' +
+        '<a class="dropdown-item" onmousedown="return _srt(\'date\');" id="sort_date">Date</a>' +
+        '<a class="dropdown-item" onmousedown="return _srt(\'name\');" id="sort_date">Name</a>'
+      '</div>' +
+      '</div>' +
+      '</p>' +
+      '<div style="clear:both;"></div>' +
+      '</div><div id="idx_tbl"></div>';
       tbl = _obj('idx_tbl');
     }
 
@@ -792,9 +827,9 @@ $up_url = ($up_dir != '' && $up_dir != '.') ? $self . '?dir=' . rawurlencode($up
       for (var i = a; i < b && i < (_files.length + _dirs.length); ++i) {
         var f = _cnt[i];
         var rc = j++ & 1 ? _c1 : _c2;
-        html += '<tr style="background-color:var(--light);"><td><img src="' + f['icon'] + '" alt="" /> &nbsp;<a class="btn btn-primary" target="_blank" href="' + f['url'] + '">' + f['name'] + '</a></td><td class="center" style="width:200px;"> <span style="float: right !important">' + f['date'] + '</span> </td></tr>';
+        html += '<tr><td><img src="' + f['icon'] + '" alt="" /> &nbsp;<a class="btn btn-primary" href="' + f['url'] + '">' + f['name'] + '</a></td><td class="center" style="width:210px;">' + f['date'] + '</td></tr>';
       }
-      // <td class="center" style="width:60px;">' + (f['dir'] ? '' : _s(f['size'])) + '</td>
+      // <td class="center" style="width:50px;">' + (f['dir'] ? '' : _s(f['size'])) + '</td> <-- Size Table Data (removed)
       tbl.innerHTML = html + '</table>';
     }
     <?php foreach ($dirs as $d) {
@@ -820,15 +855,8 @@ $up_url = ($up_dir != '' && $up_dir != '.') ? $self . '?dir=' . rawurlencode($up
 
   <!-- Content -->
   <main class="container">
-    <div class="jumbotron mt-5" style="min-width:320px; width: 60%; margin-left:auto; margin-right:auto;">
-      <span class="d-flex" style="align-items: center;">
-        <span class="w-100">
-          <h1>Documentation</h1>
-          <div id="idx" class="p-2 mt-3">
-            <!-- do not remove -->
-          </div>
-        </span>
-      </span>
+    <div id="idx">
+      <!-- do not remove -->
     </div>
   </main>
 </body>

@@ -30,10 +30,6 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script> -->
     <!-- Packery.js -->
     <script src="https://unpkg.com/packery@2.1/dist/packery.pkgd.min.js"></script>
-
-    <!-- Table Sorting (This page only) -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
 </head>
 
 <body>
@@ -99,63 +95,57 @@
             <li class="breadcrumb-item active" aria-current="Issues">Issues</li>
         </ol>
     </div>
+
+    <!-- Content -->
     <main class="container">
-        <div class="jumbotron mt-5">
-            <table class="table table-hover" style="border-radius: 15px !important;" id="tickets">
-                <thead class="thead-color">
-                    <tr>
-                        <th colspan="2" style="border-top-left-radius: 15px;">
-                            <h2>Documenation</h2>
-                        </th>
-                        <th colspan="1" class="p-0" style=" border-top-right-radius: 15px;">
-                            <p>File last modified on</p>
-                        </th>
-                    </tr>
+        <div class="jumbotron mt-5" style="width: 70%; margin-left: auto; margin-right: auto;">
+            <div class="mb-1">
+                <h2>Documentation</h2>
+                <input class="form-control" type="text" id="searchTicket" onkeyup="searchTicket()"
+                    placeholder="Search for your ticket..">
+            </div>
+            <table class="table table-hover table-striped" id="tickets">
+                <thead>
+                    <td colspan='1' id="nameHead">
+                        <p>Ticket Name</p>
+                    </td>
+                    <td colspan='1' id="dateHead">
+                        <p>Date Filed</p>
+                    </td>
                 </thead>
                 <tbody>
                     <?php
-                    include('./get.php');
+                        include('./get.php');
+                        echo '<tr style="cursor: default;"><td class="text-sm text-muted" id="listEndName">End of List</td><td style="width:160px" class="text-sm text-muted" id="listEndDate"></td></tr>';
                     ?>
                 </tbody>
-                <tfoot class="thead-color">
-                    <tr>
-                        <th colspan="1" style="border-bottom-left-radius: 15px;"></th>
-                        <th colspan="1" class="p-0">
-                            <p>File Name</p>
-                        </th>
-                        <th colspan="1" class="p-0" style=" border-bottom-right-radius: 15px;">
-                            <p>File last modified on</p>
-                        </th>
-                    </tr>
-                </tfoot>
             </table>
-            <script src="./results.json"></script>
+            <!-- Search Script -->
+            <script>
+                function searchTicket() {
+                    // Declare variables
+                    var input, filter, table, tr, td, i, txtValue;
+                    input = document.getElementById("searchTicket");
+                    filter = input.value.toUpperCase();
+                    table = document.getElementById("tickets");
+                    tr = table.getElementsByTagName("tr");
+
+                    // Loop through all table rows, and hide those who don't match the search query
+                    for (i = 0; i < tr.length; i++) {
+                        td = tr[i].querySelectorAll("td:not([id])")[0];
+                        if (td) {
+                            txtValue = td.textContent || td.innerText;
+                            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                tr[i].style.display = "";
+                            } else {
+                                tr[i].style.display = "none";
+                            }
+                        }
+                    }
+                }
+            </script>
         </div>
     </main>
-    <!-- Table Sorting (this page only) -->
-    <script src="https:///cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-    <script>
-        // const tabledata = require('./results.json');
-        $(document).ready(function () {
-
-
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', './results.json');
-            xhr.onload = function () {
-                if (xhr.status === 200) {
-                    alert('User\'s name is ' + xhr.responseText);
-                }
-                else {
-                    alert('Request failed.  Returned status of ' + xhr.status);
-                }
-            };
-            xhr.send();
-
-            $('#tickets').DataTable({
-                data: xhr.data
-            });
-        });
-    </script>
 
     <nav class="nav justify-content-center align-items-center p-3 m-0 flex-column">
         <p class="nav-link p-1 m-1 text-muted">Website &copy;Lynden High School <span id="dateYear"></span>. All
@@ -175,16 +165,6 @@
         var year = date.getFullYear();
         document.getElementById('dateYear').innerText = year;
     </script>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
