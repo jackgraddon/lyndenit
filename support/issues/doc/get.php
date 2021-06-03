@@ -1,5 +1,5 @@
 <?php
-$dir = "./doc/"; //path
+$dir = "."; //path
 
 if (is_dir($dir)) {
     if ($dh = opendir($dir)) {
@@ -10,7 +10,7 @@ if (is_dir($dir)) {
                 if (strpos($file, '.pdf')) {
                     $nameValues = substr($file, 0, strpos($file, "."));
                     $name = implode(' ', explode('-', $nameValues));
-                    $url = "./doc/{$file}";
+                    $url = "{$file}";
                     echo '<tr class="clickable" onclick="window.open(\'', $url, '\')"><td><p class="pb-0 mb-0">', $name, '</p></td><td style="width:160px">', date("M d, Y", filectime($url)), '</td></tr>';
                 } else {
                 }

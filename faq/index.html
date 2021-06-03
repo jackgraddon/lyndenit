@@ -17,18 +17,8 @@
     <link rel="stylesheet" href="../css/style.css">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/ico" href="../images/lynden/lyndenFavicon.ico" />
-    <!-- Google Site Search -->
-    <script async onload="javascript:googleLoaded();" src="https://cse.google.com/cse.js?cx=f35faae7eae0e71ee"></script>
-    <script type="text/javascript">
-        function googleLoaded() {
-            $('#searchbar').removeClass("hidden");
-            $(".safari-warning-search").addClass("hidden");
-            console.log('Google search bar loaded!')
-        }
-    </script>
-    <!-- jsCookie (for tracking progression in Tech Tutorials) -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script> -->
-    <!-- Packery.js -->
+
+
     <script src="../../../script/cookies.js"></script>
 </head>
 
@@ -54,23 +44,7 @@
                 </div>
             </span>
             <span class="flex-fill" id="spacer">
-                <!-- Search Bar -->
-                <div class="search float-right pr-3">
-                    <div class="gcse-searchbox-only"></div>
-                </div>
-                <!-- Detect Safari -->
-                <script type="application/javascript">
-                    var ua = navigator.userAgent.toLowerCase();
-                    if (ua.indexOf('safari') != -1) {
-                        if (ua.indexOf('chrome') > -1) {
-                            console.log('Using a Chromium Base - Good to go!')
-                        } else {
-                            console.log('Using Safari - Search may not work properly, hiding...');
-                            $(".search").addClass("hidden");
-                            $(".safari-warning-search").removeClass("hidden");
-                        }
-                    }
-                </script>
+
             </span>
             <span class="float-left" id="brand">
                 <span class="flex-row justify-content-center alight-items-center w-100 h-100">
@@ -119,13 +93,6 @@
             </span>
         </div>
 
-        <!-- FAQ -->
-        <script type="application/javascript">
-            function toggleStep(id) {
-                document.getElementById(id).toggleAttribute('hidden');
-            }
-        </script>
-
         <div class="alert alert-info" role="alert">
             <strong>Info!</strong> To get more detailed directions, click on the step you are confused on or need more
             help with.
@@ -138,52 +105,64 @@
                     <h4 class="card-title"><i class="fa fa-wifi" aria-hidden="true"></i> No Wifi</h4>
                     <p class="card-text">
                     <ol class="list-group">
-                        <li class="list-group-item clickable" onclick="toggleStep('wifi-step-one')">Check to see if you
-                            are on your account.
-                            <ol class="faq-step text-muted" id="wifi-step-one" hidden>
-                                <li>Click on the <i class="fa fa-windows" aria-hidden="true"></i> <b>Windows Start</b>
-                                    menu.
-                                </li>
-                                <li>Click on the <i class="fa fa-user-circle" aria-hidden="true"></i> <b>account</b>
-                                    icon.
-                                </li>
-                                <li>Check - does it say <b>LaptopLoan</b>? If so, log out and log in with your account.
-                                </li>
-                                <p class="text-muted text-sm" style="z-index: 3;">Why is LaptopLoan an issue?
-                                    <a href="#laptoploan">Click here to find out.</a>
-                                </p>
-                            </ol>
+                        <li class="list-group-item" data-toggle="collapse" data-target="#wifi-step-one">Check to see if
+                            you are on your account.
+                            <div class="collapse" id="wifi-step-one">
+                                <ol class="faq-step text-muted">
+                                    <li>Click on the <i class="fa fa-windows" aria-hidden="true"></i> <b>Windows
+                                            Start</b>
+                                        menu.
+                                    </li>
+                                    <li>Click on the <i class="fa fa-user-circle" aria-hidden="true"></i> <b>account</b>
+                                        icon.
+                                    </li>
+                                    <li>Check - does it say <b>LaptopLoan</b>? If so, log out and log in with your
+                                        account.
+                                    </li>
+                                    <p class="text-muted text-sm" style="z-index: 3;">Why is LaptopLoan an issue?
+                                        <a href="#laptoploan">Click here to find out.</a>
+                                    </p>
+                                </ol>
+                            </div>
                         </li>
-                        <li class="list-group-item clickable" onclick="toggleStep('wifi-step-two')">Check your interent
+                        <li class="list-group-item" data-toggle="collapse" data-target="#wifi-step-two">Check your
+                            interent
                             connection.
-                            <ol class="faq-step text-muted" id="wifi-step-two" hidden>
-                                <li>Press the <i class="fa fa-windows" aria-hidden="true"></i> key and <b>I</b>
-                                    at the same time.
-                                </li>
-                                <li>Search for <b>Wifi</b> in the search bar and click the top result.
-                                </li>
-                                <li>Have a connection? If not, press <b>'Show Available Network'</b> and connect to
-                                    <b>LHS-District</b>.
-                                </li>
-                                <li>Network say <b>'Connected, No Internet'</b>? Try toggling the wifi setting off and
-                                    back on again. If this doesn't work after a try or two, it may be your laptop.
-                                </li>
-                            </ol>
+                            <div class="collapse" id="wifi-step-two">
+                                <ol class="faq-step text-muted">
+                                    <li>Press the <i class="fa fa-windows" aria-hidden="true"></i> key and <b>I</b>
+                                        at the same time.
+                                    </li>
+                                    <li>Search for <b>Wifi</b> in the search bar and click the top result.
+                                    </li>
+                                    <li>Have a connection? If not, press <b>'Show Available Network'</b> and connect to
+                                        <b>LHS-District</b>.
+                                    </li>
+                                    <li>Network say <b>'Connected, No Internet'</b>? Try toggling the wifi setting off
+                                        and
+                                        back on again. If this doesn't work after a try or two, it may be your laptop.
+                                    </li>
+                                </ol>
+                            </div>
                         </li>
-                        <li class="list-group-item clickable" onclick="toggleStep('wifi-step-three')">Restart your
+                        <li class="list-group-item" data-toggle="collapse" data-target="#wifi-step-three">Restart your
                             laptop.
-                            <ol class="faq-step text-muted" id="wifi-step-three" hidden>
-                                <li>Save all of your work. Restarting will delete any unsaved documents or projects.
-                                </li>
-                                <li><b>Do not</b> press and hold the physical power button - this is not good for the
-                                    computer.
-                                    Instead, press the <i class="fa fa-windows" aria-hidden="true"></i> <b>Windows
-                                        Start</b> menu and press the power buton, and click restart.</li>
-                                <li>It will restart on its own, so wait until it is done. Log in to <a
-                                        title="Don't know how to log in?" href="#loggingin">your account</a> and try to
-                                    connect to wifi again.
-                                </li>
-                            </ol>
+                            <div class="collapse" id="wifi-step-three">
+                                <ol class="faq-step text-muted">
+                                    <li>Save all of your work. Restarting will delete any unsaved documents or projects.
+                                    </li>
+                                    <li><b>Do not</b> press and hold the physical power button - this is not good for
+                                        the
+                                        computer.
+                                        Instead, press the <i class="fa fa-windows" aria-hidden="true"></i> <b>Windows
+                                            Start</b> menu and press the power buton, and click restart.</li>
+                                    <li>It will restart on its own, so wait until it is done. Log in to <a
+                                            title="Don't know how to log in?" href="#loggingin">your account</a> and try
+                                        to
+                                        connect to wifi again.
+                                    </li>
+                                </ol>
+                            </div>
                         </li>
                     </ol>
                     </p>
@@ -194,45 +173,61 @@
                     <h4 class="card-title"><i class="fa fa-volume-mute" aria-hidden="true"></i> No Audio</h4>
                     <p class="card-text">
                     <ol class="list-group">
-                        <li class="list-group-item clickable" onclick="toggleStep('audio-step-one')">Check your volume.
-                            <ol class="faq-step text-muted" id="audio-step-one" hidden>
-                                <li>Find the keys on your keyboard with <i class="fa fa-volume-down"
-                                        aria-hidden="true"></i> and <i class="fa fa-volume-up" aria-hidden="true"></i>
-                                    icons printed on them.
-                                </li>
-                                <li>Press on the <i class="fa fa-volume-up" aria-hidden="true"></i> icon until you hear
-                                    the audio you are playing.
-                                </li>
-                            </ol>
+                        <li class="list-group-item" data-toggle="collapse" data-target="#audio-step-one">Check your
+                            volume.
+                            <div class="collapse" id="audio-step-one">
+                                <ol class="faq-step text-muted">
+                                    <li>Find the keys on your keyboard with <i class="fa fa-volume-down"
+                                            aria-hidden="true"></i> and <i class="fa fa-volume-up"
+                                            aria-hidden="true"></i>
+                                        icons printed on them.
+                                    </li>
+                                    <li>Press on the <i class="fa fa-volume-up" aria-hidden="true"></i> icon until you
+                                        hear
+                                        the audio you are playing.
+                                    </li>
+                                </ol>
+                            </div>
                         </li>
-                        <li class="list-group-item clickable" onclick="toggleStep('audio-step-two')">Check your audio
+                        <li class="list-group-item" data-toggle="collapse" data-target="#audio-step-two">Check your
+                            audio
                             output.
-                            <ol class="faq-step text-muted" id="audio-step-two" hidden>
-                                <li>Press the <i class="fa fa-windows" aria-hidden="true"></i> key and <b>I</b>
-                                    at the same time.
-                                </li>
-                                <li>Search for <b>Audio Output</b> in the search bar and click the top result.
-                                </li>
-                                <li>What does it say? If it says anything other than <b>Internal Speakers</b> (Or the
-                                    device you intend to use if you are using custom audio outputs, like headphones),
-                                    set it to that device by clicking on the dropdown and selecting the output you need.
-                                </li>
-                            </ol>
+                            <div class="collapse" id="audio-step-two">
+                                <ol class="faq-step text-muted">
+                                    <li>Press the <i class="fa fa-windows" aria-hidden="true"></i> key and <b>I</b>
+                                        at the same time.
+                                    </li>
+                                    <li>Search for <b>Audio Output</b> in the search bar and click the top result.
+                                    </li>
+                                    <li>What does it say? If it says anything other than <b>Internal Speakers</b> (Or
+                                        the
+                                        device you intend to use if you are using custom audio outputs, like
+                                        headphones),
+                                        set it to that device by clicking on the dropdown and selecting the output you
+                                        need.
+                                    </li>
+                                </ol>
+                            </div>
                         </li>
-                        <li class="list-group-item clickable" onclick="toggleStep('audio-step-three')">Restart your
+                        <li class="list-group-item" data-toggle="collapse" data-target="#audio-step-three">Restart
+                            your
                             laptop.
-                            <ol class="faq-step text-muted" id="audio-step-three" hidden>
-                                <li>Save all of your work. Restarting will delete any unsaved documents or projects.
-                                </li>
-                                <li><b>Do not</b> press and hold the physical power button - this is not good for the
-                                    computer.
-                                    Instead, press the <i class="fa fa-windows" aria-hidden="true"></i> <b>Windows
-                                        Start</b> menu and press the power buton, and click restart.</li>
-                                <li>It will restart on its own, so wait until it is done. Log in to <a
-                                        title="Don't know how to log in?" href="#loggingin">your account</a> and try to
-                                    connect to wifi again.
-                                </li>
-                            </ol>
+                            <div class="collapse" id="audio-step-three">
+                                <ol class="faq-step text-muted">
+                                    <li>Save all of your work. Restarting will delete any unsaved documents or projects.
+                                    </li>
+                                    <li><b>Do not</b> press and hold the physical power button - this is not good for
+                                        the
+                                        computer.
+                                        Instead, press the <i class="fa fa-windows" aria-hidden="true"></i> <b>Windows
+                                            Start</b> menu and press the power buton, and click restart.</li>
+                                    <li>It will restart on its own, so wait until it is done. Log in to <a
+                                            title="Don't know how to log in?" href="#loggingin">your account</a> and try
+                                        to
+                                        connect to wifi again.
+                                    </li>
+                                </ol>
+                            </div>
                         </li>
                     </ol>
                     </p>
@@ -243,27 +238,36 @@
                     <h4 class="card-title"> <i class="fa fa-download" aria-hidden="true"></i> Example Issue</h4>
                     <p class="card-text">
                     <ol class="list-group">
-                        <li class="list-group-item clickable" onclick="toggleStep('test-step-one')">Example troubleshoot
+                        <li class="list-group-item" data-toggle="collapse" data-target="#test-step-one">Example
+                            troubleshoot
                             option.
-                            <ol class="faq-step text-muted" id="test-step-one" hidden>
-                                <li>Example detail steps with <b>bold lettering</b>.
-                                </li>
-                            </ol>
+                            <div class="collapse" id="test-step-one">
+                                <ol class="faq-step text-muted">
+                                    <li>Example detail steps with <b>bold lettering</b>.
+                                    </li>
+                                </ol>
+                            </div>
                         </li>
-                        <li class="list-group-item clickable" onclick="toggleStep('test-step-two')">Example troubleshoot
+                        <li class="list-group-item" data-toggle="collapse" data-target="#test-step-two">Example
+                            troubleshoot
                             option two.
-                            <ol class="faq-step text-muted" id="test-step-two" hidden>
-                                <li>Example detial step with <i class="fa fa-hourglass" aria-hidden="true"></i> icons.
-                                </li>
-                            </ol>
+                            <div class="collapse" id="test-step-two">
+                                <ol class="faq-step text-muted">
+                                    <li>Example detial step with <i class="fa fa-hourglass" aria-hidden="true"></i>
+                                        icons.
+                                    </li>
+                                </ol>
+                            </div>
                         </li>
-                        <li class="list-group-item clickable" onclick="toggleStep('test-step-three')">Example
+                        <li class="list-group-item" data-toggle="collapse" data-target="#test-step-three">Example
                             troubleshoot option three.
-                            <ol class="faq-step text-muted" id="test-step-three" hidden>
-                                <li>Example detail step with link to <a title="Click me!" href="#loggingin">another
-                                        location</a> on this page.
-                                </li>
-                            </ol>
+                            <div class="collapse" id="test-step-three">
+                                <ol class="faq-step text-muted">
+                                    <li>Example detail step with link to <a title="Click me!" href="#loggingin">another
+                                            location</a> on this page.
+                                    </li>
+                                </ol>
+                            </div>
                         </li>
                     </ol>
                     </p>
@@ -355,10 +359,7 @@
         <p class="nav-link p-1 m-1 text-muted">Provide feedback on the site <a target="_blank" class="link"
                 title="Requires a GitHub account." href="https://github.com/jackgraddon/lyndenit/issues/new/choose">here
                 <i class="fa fa-external-link" aria-hidden="true"></i></a>.</p>
-        <!-- Search Failed Warning (Will hide on successful search load) -->
-        <p class="safari-warning-search text-muted text-sm">
-            <i class="fa fa-eye-slash" aria-hidden="true"></i> Search has failed to load.
-        </p>
+
     </nav>
     <script type="text/javascript">
         var date = new Date();

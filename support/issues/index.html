@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <head>
-    <title>Lynden IT | Home</title>
+    <title>Lynden IT | Issues</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,27 +14,28 @@
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/e80db28d62.js" crossorigin="anonymous"></script>
     <!-- Personal CSS -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/ico" href="./images/lynden/lyndenFavicon.ico" />
+    <link rel="shortcut icon" type="image/ico" href="../../images/lynden/lyndenFavicon.ico" />
 </head>
 
 <body>
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-sm sticky-top">
         <div class="d-flex flex-sm-row-reverse w-100 h-100 align-content-center">
             <span id="menubar">
                 <!-- Navigation Links -->
-                <div class="">
+                <div class="collapse navbar-collapse">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../">Home</a>
+                        </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="./">Home<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="../../support/">Support<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./support/">Support</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./faq/">FAQ</a>
+                            <a class="nav-link" href="../../faq/">FAQ</a>
                         </li>
                     </ul>
                 </div>
@@ -44,7 +45,7 @@
             </span>
             <span class="float-left" id="brand">
                 <span class="flex-row justify-content-center alight-items-center w-100 h-100">
-                    <a class="navbar-brand" href="./">
+                    <a class="navbar-brand" href="../../">
                         <div class="navbar-brand-img"></div>
                     </a>
                     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
@@ -56,75 +57,56 @@
             </span>
         </div>
     </nav>
+    <div aria-label="breadcrumb">
+        <ol class="breadcrumb m-0">
+            <li class="breadcrumb-item"><a href="../../">Home</a></li>
+            <li class="breadcrumb-item"><a href="../">Support</a></li>
+            <li class="breadcrumb-item active" aria-current="Issues">Learn</li>
+        </ol>
+    </div>
+
 
     <!-- Content -->
     <main class="container">
         <div class="jumbotron mt-5">
             <span class="d-flex" style="align-items: center;">
                 <span class="w-100">
-                    <h1>Lynden Tech Support</h1>
-                    <p class="lead">Easy to Use Tech Support for Lynden High School</p>
+                    <h1>Learn</h1>
+                    <p class="lead">Learn how to do new things with your computer</p>
                 </span>
-                <img src="./images/lynden/svg/lyndenIcon.svg" class="float-right" height="200px">
+                <img src="../../images/lynden/svg/lyndenIcon.svg" class="float-right" height="200px">
             </span>
         </div>
 
         <div class="mt-5">
-            <h1>Need help?</h1>
+            <p class="lead m-0 p-0"><span class="badge badge-pill badge-primary">Recommended</span></p>
+            <h1 class="mt-0">Learn the Basics of Office</h1>
             <div class="card-deck">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Browse our Support Page</h4>
-                        <p class="card-text">Look through our Support page to find your issue.</p>
-                        <a class="btn btn-primary" href="./support/" role="button">View Support</a>
+                        <h4 class="card-title">OneDrive</h4>
+                        <p class="card-text">How to set up OneDrive on your computer(s).</p>
+                        <a class="btn btn-primary" href="./onedrive/">Learn</a>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Browse the FAQ</h4>
-                        <p class="card-text">Look over our commonly reported issues.</p>
-                        <a class="btn btn-primary" href="./faq/" role="button">Search FAQ</a>
+                        <h4 class="card-title">Office Apps</h4>
+                        <p class="card-text">How to use Microsoft Office on your computers.</p>
+                        <a class="btn btn-primary" href="./office/">Learn</a>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="mt-5">
-            <h1>Still Having Trouble?</h1>
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Submit a Support Ticket</h4>
-                    <p class="card-text">You can submit a support ticket through our form with the button below.</p>
-                    <a class="btn btn-primary" href="#"
-                        onClick="formWindow=window.open('https://forms.office.com/Pages/ResponsePage.aspx?id=28PyA8JlyEewn-mSHEhFOazylAF7DSpAvgBU1mhaHBlUNDhJSzMzTDA3RVRXQllRNVlPR0NWTlRCNC4u','formWindow','width=840,height=480'); return false;">Open
-                        the Form</a>
-                    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formModal">
-                        Open the Form
-                    </button> -->
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Other</h4>
+                        <p class="card-text">Not seeing what you want? Use our search tool!</p>
+                        <a class="btn btn-primary" href="https://cse.google.com/cse?cx=f35faae7eae0e71ee"
+                            target="_blank">Search <i class="fa fa-external-link" aria-hidden="true"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
-
-    <!-- Form Modal -->
-    <div class="modal" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="formModalTitle">Submit a Tech Support Ticket</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <iframe <iframe width="640px" height="480px"
-                        src="https://forms.office.com/Pages/ResponsePage.aspx?id=28PyA8JlyEewn-mSHEhFOazylAF7DSpAvgBU1mhaHBlUNDhJSzMzTDA3RVRXQllRNVlPR0NWTlRCNC4u"
-                        frameborder="0" marginwidth="0" marginheight="0"
-                        style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen
-                        mozallowfullscreen msallowfullscreen> </iframe>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <nav class="nav justify-content-center align-items-center p-3 mt-5 flex-column">
         <p class="nav-link p-1 m-1 text-muted">Website &copy;Lynden High School <span id="dateYear"></span>. All
@@ -133,8 +115,8 @@
         <p class="nav-link p-1 m-1 text-muted">Developed by Jack Graddon</p>
         <p class="nav-link p-1 m-1 text-muted">Provide feedback on the site <a target="_blank" class="link"
                 title="Requires a GitHub account." href="https://github.com/jackgraddon/lyndenit/issues/new/choose">here
-                <i class="fa fa-external-link" aria-hidden="true"></i></a>.
-        </p>
+                <i class="fa fa-external-link" aria-hidden="true"></i></a></p>
+
     </nav>
     <script type="text/javascript">
         var date = new Date();

@@ -17,21 +17,7 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/ico" href="../../../images/lynden/lyndenFavicon.ico" />
-    <!-- Google Site Search -->
-    <script async onload="javascript:googleLoaded();" src="https://cse.google.com/cse.js?cx=f35faae7eae0e71ee"></script>
-    <script type="text/javascript">
-        function googleLoaded() {
-            $('#searchbar').removeClass("hidden");
-            $(".safari-warning-search").addClass("hidden");
-            console.log('Google search bar loaded!')
-        }
-    </script>
-    <!-- jsCookie (for tracking progression in Tech Tutorials) -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script> -->
     <!-- Packery.js -->
-    <script src="https://unpkg.com/packery@2.1/dist/packery.pkgd.min.js"></script>
-    <!-- Packery.js -->
-    <script src="https://unpkg.com/packery@2.1/dist/packery.pkgd.min.js"></script>
 </head>
 
 <body>
@@ -56,23 +42,7 @@
                 </div>
             </span>
             <span class="flex-fill" id="spacer">
-                <!-- Search Bar -->
-                <div class="search float-right pr-3">
-                    <div class="gcse-searchbox-only"></div>
-                </div>
-                <!-- Detect Safari -->
-                <script type="application/javascript">
-                    var ua = navigator.userAgent.toLowerCase();
-                    if (ua.indexOf('safari') != -1) {
-                        if (ua.indexOf('chrome') > -1) {
-                            console.log('Using a Chromium Base - Good to go!')
-                        } else {
-                            console.log('Using Safari - Search may not work properly, hiding...');
-                            $(".search").addClass("hidden");
-                            $(".safari-warning-search").removeClass("hidden");
-                        }
-                    }
-                </script>
+
             </span>
             <span class="float-left" id="brand">
                 <span class="flex-row justify-content-center alight-items-center w-100 h-100">
@@ -545,10 +515,7 @@
         <p class="nav-link p-1 m-1 text-muted">Provide feedback on the site <a target="_blank" class="link"
                 title="Requires a GitHub account." href="https://github.com/jackgraddon/lyndenit/issues/new/choose">here
                 <i class="fa fa-external-link" aria-hidden="true"></i></a>.</p>
-        <!-- Search Failed Warning (Will hide on successful search load) -->
-        <p class="safari-warning-search text-muted text-sm">
-            <i class="fa fa-eye-slash" aria-hidden="true"></i> Search has failed to load.
-        </p>
+
     </nav>
     <script type="text/javascript">
         var date = new Date();
