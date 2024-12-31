@@ -8,4 +8,4 @@ This site was developed to demonstrate how the IT department could leverage a si
 You can see a live demo of this site by [clicking here](https://jackgraddon.github.io/lyndenit/).
 
 ## Additional Info
-Additional info is available at [this page](INFO.md).
+Additional info is available [here](https://github.com/jackgraddon/lyndenit/blob/main/INFO.md).
