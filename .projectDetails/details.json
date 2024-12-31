@@ -1,0 +1,9 @@
+{
+  "id": "210000",
+  "name": "Lynden IT Support",
+  "description": "A simple support website designed to serve the students of Lynden High School.",
+  "url": "lyndenit/main/README.md",
+  "backgroundColor": "rgb(255, 235, 199)",
+  "buttonColor": "rgb(247, 212, 181)",
+  "status": "Archived"
+}
